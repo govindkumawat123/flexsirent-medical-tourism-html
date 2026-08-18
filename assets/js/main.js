@@ -200,135 +200,101 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
-  var current_fs, next_fs, previous_fs; //fieldsets
-  var opacity;
-  var current = 1;
-  var steps = $("fieldset").length;
 
-  setProgressBar(current);
+    var current = 1;
+    var steps = $("#msform2 fieldset").length;
 
-  $(".ct_multistep_form_next").click(function () {
+    // Hide all fieldsets except first
+    $("#msform2 fieldset:not(:first)").hide();
 
-    current_fs = $(this).closest("fieldset");
-    next_fs = current_fs.next("fieldset");
-
-    $("#ct_form_progressbar2 li")
-      .eq($("fieldset").index(next_fs))
-      .addClass("active");
-
-    next_fs.show();
-
-    current_fs.animate(
-      { opacity: 0 },
-      {
-        step: function (now) {
-          opacity = 1 - now;
-
-          current_fs.css({
-            display: "none",
-            position: "relative"
-          });
-
-          next_fs.css({
-            opacity: opacity
-          });
-        },
-        duration: 500
-      }
-    );
-
-    setProgressBar(++current);
-  });
-
-  $(".previous").click(function () {
-
-    current_fs = $(this).closest("fieldset");
-    previous_fs = current_fs.prev("fieldset");
-
-    $("#ct_form_progressbar2 li")
-      .eq($("fieldset").index(current_fs))
-      .removeClass("active");
-
-    previous_fs.show();
-
-    current_fs.animate(
-      { opacity: 0 },
-      {
-        step: function (now) {
-          opacity = 1 - now;
-
-          current_fs.css({
-            display: "none",
-            position: "relative"
-          });
-
-          previous_fs.css({
-            opacity: opacity
-          });
-        },
-        duration: 500
-      }
-    );
-
-    setProgressBar(--current);
-  });
-
-  function setProgressBar(curStep) {
-    var percent = parseFloat(100 / steps) * curStep;
-    percent = percent.toFixed();
-    $(".progress-bar").css("width", percent + "%");
-  }
-
-  $(".submit").click(function () {
-    return false;
-  });
-
-  $(".ct_apply_filter_btn").click(function () {
-    $(".ct_mobile_filter_category_content").addClass("active");
-  });
-  $(".ct_category_close_btn").click(function () {
-    $(".ct_mobile_filter_category_content").removeClass("active");
-  });
-});
+    setProgressBar(current);
 
 
+    // NEXT BUTTON
+    $(".ct_multistep_form_next").click(function () {
 
-$(document).ready(function () {
+        var current_fs = $(this).closest("fieldset");
+        var next_fs = current_fs.next("fieldset");
 
-  var clinicSlider = $(".ct_related_clinic_slider");
+        if (!next_fs.length) {
+            return;
+        }
 
-  clinicSlider.owlCarousel({
-    loop: true,
-    margin: 0,
-    nav: false,
-    dots: false,
-    autoplay: false,
-    smartSpeed: 600,
+        // Progress
+        $("#ct_form_progressbar2 li")
+            .eq($("#msform2 fieldset").index(next_fs))
+            .addClass("active");
 
-    responsive: {
-      0: {
-        items: 1
-      },
+        // Hide current
+        current_fs.fadeOut(300, function () {
 
-      576: {
-        items: 2
-      },
+            // Show next
+            next_fs.fadeIn(300);
 
-      992: {
-        items: 3
-      }
+        });
+
+        current++;
+
+        setProgressBar(current);
+    });
+
+
+    // PREVIOUS BUTTON
+    $(".previous").click(function () {
+
+        var current_fs = $(this).closest("fieldset");
+        var previous_fs = current_fs.prev("fieldset");
+
+        if (!previous_fs.length) {
+            return;
+        }
+
+        // Remove active progress
+        $("#ct_form_progressbar2 li")
+            .eq($("#msform2 fieldset").index(current_fs))
+            .removeClass("active");
+
+        // Hide current
+        current_fs.fadeOut(300, function () {
+
+            // Show previous
+            previous_fs.fadeIn(300);
+
+        });
+
+        current--;
+
+        setProgressBar(current);
+    });
+
+
+    // PROGRESS BAR
+    function setProgressBar(curStep) {
+
+        var percent = (100 / steps) * curStep;
+
+        $(".progress-bar").css(
+            "width",
+            percent + "%"
+        );
     }
-  });
 
-  $(".ct_clinic_prev").click(function () {
-    clinicSlider.trigger("prev.owl.carousel");
-  });
 
-  $(".ct_clinic_next").click(function () {
-    clinicSlider.trigger("next.owl.carousel");
-  });
+    $(".submit").click(function () {
+        return false;
+    });
+
+
+    $(".ct_apply_filter_btn").click(function () {
+        $(".ct_mobile_filter_category_content").addClass("active");
+    });
+
+    $(".ct_category_close_btn").click(function () {
+        $(".ct_mobile_filter_category_content").removeClass("active");
+    });
 
 });
+ 
 
 
 
