@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Find a Clinic</title>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal:#0d9f8f;
+    --teal-dark:#0b8578;
+    --ink:#1c2b33;
+    --muted:#7c8a92;
+    --line:#e7ebed;
+    --bg:#f6f8f8;
+    --green-bg:#e6f7ee;
+    --green-text:#1c9a5b;
+    --gold:#f5a623;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+  }
+  a{text-decoration:none;}
+
+  /* ---------- Top bar ---------- */
+  .page-wrap{max-width:1320px;margin:0 auto;padding:24px 20px 60px;}
+  .top-bar{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:20px;
+    flex-wrap:wrap;
+    gap:12px;
+  }
+  .result-count{font-size:.92rem;color:var(--muted);}
+  .result-count strong{color:var(--ink);font-weight:600;}
+  .sort-select{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:8px 14px;
+    font-size:.88rem;
+    background:#fff;
+    color:var(--ink);
+  }
+  .filters-toggle-btn{
+    display:none;
+    align-items:center;
+    gap:8px;
+    border:1px solid var(--line);
+    background:#fff;
+    border-radius:8px;
+    padding:8px 14px;
+    font-size:.88rem;
+    font-weight:600;
+    color:var(--ink);
+    cursor:pointer;
+  }
+
+  /* ---------- Sidebar (filters) card ---------- */
+  .filters-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px;
+  }
+  .filters-head{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom:18px;
+  }
+  .filters-head h6{font-weight:700;margin:0;font-size:1rem;}
+  .reset-link{font-size:.82rem;color:var(--muted);font-weight:500;}
+  .filter-group{margin-bottom:20px;}
+  .filter-label{
+    font-size:.78rem;
+    font-weight:600;
+    color:var(--ink);
+    margin-bottom:8px;
+    display:block;
+  }
+  .form-select-custom{
+    border:1px solid var(--line);
+    border-radius:8px;
+    font-size:.85rem;
+    padding:9px 12px;
+    color:var(--ink);
+  }
+  .form-select-custom:focus{
+    box-shadow:0 0 0 3px rgba(13,159,143,.15);
+    border-color:var(--teal);
+  }
+  .price-row{
+    display:flex;
+    justify-content:space-between;
+    font-size:.75rem;
+    color:var(--muted);
+    margin-top:6px;
+  }
+  .form-range{accent-color:var(--teal);}
+  .rating-group{display:flex;gap:8px;flex-wrap:wrap;}
+  .rating-pill{
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:7px 12px;
+    font-size:.8rem;
+    font-weight:600;
+    color:var(--ink);
+    background:#fff;
+    display:flex;
+    align-items:center;
+    gap:4px;
+    cursor:pointer;
+  }
+  .rating-pill i{color:var(--gold);font-size:.75rem;}
+  .rating-pill.active{
+    background:var(--teal);
+    border-color:var(--teal);
+    color:#fff;
+  }
+  .rating-pill.active i{color:#fff;}
+  .form-check-label{font-size:.85rem;color:var(--ink);}
+  .form-check-input:checked{background-color:var(--teal);border-color:var(--teal);}
+  .form-check-input{margin-top:.28em;}
+  .form-check{margin-bottom:10px;}
+  .services-title{font-size:.78rem;font-weight:600;margin-bottom:10px;display:block;}
+  .btn-teal-outline{
+    border:1.5px solid var(--teal);
+    color:var(--teal);
+    font-weight:600;
+    border-radius:9px;
+    padding:10px;
+    font-size:.88rem;
+    width:100%;
+    background:#fff;
+    transition:.15s;
+    display:inline-block;
+    text-align:center;
+  }
+  .btn-teal-outline:hover{background:var(--teal);color:#fff;}
+
+  /* ---------- Clinic cards ---------- */
+  .clinic-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    overflow:hidden;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    transition:box-shadow .2s, transform .2s;
+  }
+  .clinic-card:hover{
+    box-shadow:0 10px 24px rgba(20,40,45,.08);
+    transform:translateY(-2px);
+  }
+  .card-img-wrap{
+    position:relative;
+    height:170px;
+  }
+  .card-img-wrap img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+  }
+  .fav-btn{
+    position:absolute;
+    top:10px;
+    right:10px;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:rgba(255,255,255,.92);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#8a97a0;
+    font-size:.8rem;
+    border:none;
+  }
+  .rating-badge{
+    position:absolute;
+    left:10px;
+    bottom:10px;
+    background:rgba(20,32,38,.82);
+    color:#fff;
+    font-size:.74rem;
+    font-weight:700;
+    padding:3px 8px;
+    border-radius:6px;
+    display:flex;
+    align-items:center;
+    gap:4px;
+  }
+  .rating-badge i{color:var(--gold);}
+  .card-body-custom{padding:16px 16px 18px;flex:1;display:flex;flex-direction:column;}
+  .clinic-name{font-size:1.02rem;font-weight:700;margin-bottom:6px;color:var(--ink);}
+  .accredit-badge{
+    display:inline-block;
+    background:var(--green-bg);
+    color:var(--green-text);
+    font-size:.7rem;
+    font-weight:700;
+    padding:3px 9px;
+    border-radius:6px;
+    margin-bottom:8px;
+    width:fit-content;
+  }
+  .clinic-location{
+    font-size:.78rem;
+    color:var(--muted);
+    margin-bottom:4px;
+  }
+  .clinic-location i{width:14px;color:var(--muted);}
+  .clinic-specialty{
+    font-size:.78rem;
+    color:var(--muted);
+    margin-bottom:12px;
+  }
+  .consult-price{
+    font-size:.8rem;
+    color:var(--muted);
+    margin-bottom:12px;
+  }
+  .consult-price strong{color:var(--ink);font-weight:700;font-size:.92rem;}
+  .view-clinic-btn{margin-top:auto;}
+
+  /* ---------- Pagination ---------- */
+  .pagination-wrap{
+    display:flex;
+    justify-content:center;
+    margin-top:34px;
+  }
+  .page-btn{
+    border:1px solid var(--line);
+    background:#fff;
+    color:var(--ink);
+    width:38px;
+    height:38px;
+    border-radius:8px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:.85rem;
+    font-weight:600;
+    margin:0 3px;
+  }
+  .page-btn.active{background:var(--teal);border-color:var(--teal);color:#fff;}
+
+  /* =========================================================
+     CSS-ONLY RESPONSIVE SIDEBAR (checkbox hack, no JavaScript)
+     Same .filters-panel markup is used once. On desktop it sits
+     as a normal sidebar column; on tablet/mobile CSS turns it
+     into a fixed slide-in panel controlled by the hidden checkbox.
+     ========================================================= */
+  #filtersToggle{ display:none; } /* the actual checkbox, hidden */
+
+  .offcanvas-close{
+    display:none;
+    border:none;
+    background:none;
+    font-size:1.2rem;
+    color:var(--muted);
+    line-height:1;
+  }
+  .offcanvas-backdrop{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.4);
+    z-index:1040;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s ease;
+    display:none;
+  }
+
+  @media (max-width: 991.98px){
+    .filters-toggle-btn{display:inline-flex;}
+
+    .filters-panel{
+      position:fixed;
+      top:0;
+      left:0;
+      height:100%;
+      width:300px;
+      max-width:85vw;
+      background:#fff;
+      z-index:1050;
+      transform:translateX(-100%);
+      transition:transform .3s ease;
+      overflow-y:auto;
+      box-shadow:0 0 30px rgba(0,0,0,.15);
+    }
+    .filters-panel .filters-card{
+      border:none;
+      border-radius:0;
+    }
+    .offcanvas-header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 20px;
+      border-bottom:1px solid var(--line);
+    }
+    .offcanvas-header h5{font-weight:700;margin:0;}
+    .offcanvas-close{display:block;}
+    .offcanvas-backdrop{display:block;}
+
+    /* When the hidden checkbox is checked, slide the panel in + show backdrop */
+    body:has(#filtersToggle:checked) .filters-panel{
+      transform:translateX(0);
+    }
+    #filtersToggle:checked ~ .offcanvas-backdrop{
+      opacity:1;
+      pointer-events:auto;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- Hidden checkbox drives the offcanvas open/close state -->
+<input type="checkbox" id="filtersToggle">
+
+<div class="page-wrap">
+
+  <!-- Top bar -->
+   <div class="top-bar">
+    <div class="d-flex align-items-center gap-3 flex-wrap">
+      <label for="filtersToggle" class="filters-toggle-btn">
+        <i class="fa-solid fa-sliders"></i> Filters
+      </label>
+      <div class="result-count ct_fs_14">
+        <span class="ct_text_4B5563">Showing 1-12 of</span> 248 clinics</div>
+    </div>
+    <div class="d-flex align-items-center gap-2">
+      <span class="d-none d-sm-inline ct_text_4B5563 ct_fs_14 text-nowrap">Sort by:</span>
+      <select class="form-select">
+        <option>Most Popular</option>
+        <option>Highest Rated</option>
+        <option>Price: Low to High</option>
+        <option>Price: High to Low</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row ">
+   
+    <div class="col-lg-4">
+      <div class="filters-panel">
+        <!-- header only shows on tablet/mobile (CSS controlled) -->
+        <div class="offcanvas-header">
+        
+          <label for="filtersToggle" class="offcanvas-close"><i class="fa-solid fa-xmark"></i></label>
+        </div>
+
+        <div class="filters-card">
+         <div class="filters-head d-flex justify-content-between align-items-center gap-2 mb-4">
+          <h6 class="ct_fs_18 ct_fw_400">Filter Clinics</h6>
+          <a href="#" class="reset-link ct_text_4B5563">Reset <i class="fa-solid fa-rotate ms-1 ct_text_4B5563"></i></a>
+        </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Country</label>
+            <select class="form-select form-select-custom">
+              <option>All Countries</option>
+              <option>India</option>
+              <option>Thailand</option>
+              <option>Turkey</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">City</label>
+            <select class="form-select form-select-custom">
+              <option>All Cities</option>
+              <option>Gurugram</option>
+              <option>Chennai</option>
+              <option>Mumbai</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Specialty</label>
+            <select class="form-select form-select-custom">
+              <option>All Specialties</option>
+              <option>Cardiology</option>
+              <option>Orthopedics</option>
+              <option>Oncology</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Price Range</label>
+            <input type="range" class="form-range" min="0" max="500">
+            <div class="price-row"><span>$0</span><span>$500</span></div>
+          </div>
+
+          <div class="filter-group">
+            <label class="filter-label">Rating</label>
+            <div class="rating-group">
+              <span class="rating-pill active">All</span>
+              <span class="rating-pill">3 <i class="fa-solid fa-star"></i></span>
+              <span class="rating-pill">4 <i class="fa-solid fa-star"></i></span>
+              <span class="rating-pill">5 <i class="fa-solid fa-star"></i></span>
+            </div>
+          </div>
+
+          <div class="filter-group">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="insCheck">
+              <label class="form-check-label" for="insCheck">Insurance Accepted Only</label>
+            </div>
+          </div>
+
+          <div class="filter-group mb-4">
+            <span class="services-title">Patient Services</span>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="svc1">
+              <label class="form-check-label" for="svc1">Airport Pickup</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="svc2">
+              <label class="form-check-label" for="svc2">Hotel Assistance</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="svc3">
+              <label class="form-check-label" for="svc3">Medical Visa Support</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="svc4">
+              <label class="form-check-label" for="svc4">Translator Available</label>
+            </div>
+          </div>
+
+          <button class="btn-teal-outline">View 248 Clinics</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Clinic grid -->
+    <div class="col-lg-8">
+      <div class="row g-4">
+
+        <!-- Card 1 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1587351021355-a479a299d2f9?w=500&h=400&fit=crop" alt="Apollo Hospital">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Apollo Hospital</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Cardiology · Orthopedics</div>
+              <div class="consult-price">Consultation from <strong>$80</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=500&h=400&fit=crop" alt="Medanta - The Medicity">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Medanta - The Medicity</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Cancer Care · Cardiology · Neurology</div>
+              <div class="consult-price">Consultation from <strong>$90</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1516549655669-df64a4c3c8d1?w=500&h=400&fit=crop" alt="Fortis Memorial Research Institute">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Fortis Memorial Research Institute</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Orthopedics · Urology</div>
+              <div class="consult-price">Consultation from <strong>$85</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?w=500&h=400&fit=crop" alt="Apollo Hospital">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.7</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Apollo Hospital</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Chennai, India</div>
+              <div class="clinic-specialty">Cardiology · Orthopedics</div>
+              <div class="consult-price">Consultation from <strong>$80</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&h=400&fit=crop" alt="Medanta - The Medicity">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Medanta - The Medicity</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Cancer Care · Cardiology · Neurology</div>
+              <div class="consult-price">Consultation from <strong>$90</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1538108149393-fbbd81895907?w=500&h=400&fit=crop" alt="Fortis Memorial Research Institute">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Fortis Memorial Research Institute</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Orthopedics · Urology</div>
+              <div class="consult-price">Consultation from <strong>$85</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551190822-a9333d879b1f?w=500&h=400&fit=crop" alt="Apollo Hospital">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.6</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Apollo Hospital</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Mumbai, India</div>
+              <div class="clinic-specialty">Cardiology · Orthopedics</div>
+              <div class="consult-price">Consultation from <strong>$78</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1580281657702-257584239a55?w=500&h=400&fit=crop" alt="Medanta - The Medicity">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.9</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Medanta - The Medicity</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Cancer Care · Cardiology · Neurology</div>
+              <div class="consult-price">Consultation from <strong>$92</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 9 -->
+        <div class="col-md-6 col-xl-4">
+          <div class="clinic-card">
+            <div class="card-img-wrap">
+              <img src="https://images.unsplash.com/photo-1551601651-2a8555f1a136?w=500&h=400&fit=crop" alt="Fortis Memorial Research Institute">
+              <button class="fav-btn"><i class="fa-regular fa-heart"></i></button>
+              <div class="rating-badge"><i class="fa-solid fa-star"></i> 4.8</div>
+            </div>
+            <div class="card-body-custom">
+              <div class="clinic-name">Fortis Memorial Research Institute</div>
+              <span class="accredit-badge">JCI Accredited</span>
+              <div class="clinic-location"><i class="fa-solid fa-location-dot"></i> Gurugram, India</div>
+              <div class="clinic-specialty">Orthopedics · Urology</div>
+              <div class="consult-price">Consultation from <strong>$85</strong></div>
+              <a href="#" class="btn-teal-outline view-clinic-btn">View Clinic</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-wrap">
+        <a href="#" class="page-btn"><i class="fa-solid fa-chevron-left"></i></a>
+        <a href="#" class="page-btn active">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+        <span class="d-flex align-items-center px-1" style="color:var(--muted);">…</span>
+        <a href="#" class="page-btn">21</a>
+        <a href="#" class="page-btn"><i class="fa-solid fa-chevron-right"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Backdrop: clicking it (label) closes the panel on tablet/mobile -->
+<label for="filtersToggle" class="offcanvas-backdrop"></label>
+
+</body>
+</html>

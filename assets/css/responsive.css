@@ -1,0 +1,244 @@
+@media screen and (max-width: 991px) {
+  .ct_navbar > ul {
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    width: 300px;
+    right: -100%;
+    height: 100vh;
+    background-color: var(--primary);
+    top: 0px;
+    padding: 60px 30px;
+    z-index: 999;
+    transition: 0.4s ease all;
+  }
+  .ct_login_dropdown ul.dropdown-menu.show {
+    height: auto;
+    /* position: unset !important; */
+  }
+  .ct_login_dropdown ul.dropdown-menu.show li a {
+    color: #000;
+  }
+  .ct_navbar.ct_show ul {
+    right: 0px;
+  }
+  .ct_navbar li a:after,
+  .ct_navbar li span:after {
+    background-color: #fff;
+  }
+  .ct_close_menu {
+    display: block;
+  }
+  .ct_navbar li a,
+  .ct_navbar li span,
+  .ct_navbar li {
+    color: #fff;
+  }
+  .ct_navbar li a:hover,
+  .ct_navbar li span:hover,
+  .ct_navbar li a.active {
+    color: #fff;
+  }
+
+  .ct_menu_bar {
+    display: block;
+  }
+
+  .ct_navbar {
+    padding-left: 0px;
+  }
+  .ct_navbar ul {
+    justify-content: start;
+  }
+
+
+  .ct_login_left_cnt {
+    display: none;
+  }
+
+  .ct_login_main {
+    grid-template-columns: auto;
+  }
+
+
+  /* multistep form css */
+  #msform{
+   grid-template-columns: 1fr;
+   height: auto;
+   overflow: auto;
+   
+  }
+  .ct_stepper{
+    height: fit-content;
+    display: flex;
+  }
+  .ct_stepper li:before {
+    top: 20px;
+    left: 32px;
+    width: 100%;
+    height: 2px;
+}
+.ct_stepper li{
+  padding-bottom:0px;
+  flex-direction: column;
+}
+.ct_stepper li:not(:last-child)::after{
+    top: 16px;
+    left: calc(50% + 20px);
+}
+.ct_form_card{
+  height: auto;
+  overflow: auto;
+}
+#ct_step_form_modal .modal-body.ct_custom_scroll{
+    overflow: auto !important;
+   
+}
+
+#ct_step_form_modal .modal-dialog-scrollable .modal-body{
+    overflow: auto !important;
+}
+
+
+/* offcanva css */
+.filters-panel{
+      position:fixed;
+      top:0;
+      left:0;
+      height:100%;
+      width:100%;
+      max-width:400px;
+      background:#fff;
+      z-index:1050;
+      transform:translateX(-100%);
+      transition:transform .3s ease;
+      overflow-y:auto;
+      box-shadow:0 0 30px rgba(0,0,0,.15);
+    }
+    .filters-panel .filters-card{
+      border:none;
+      border-radius:0;
+    }
+
+
+    .filters-toggle-btn{
+      display:inline-flex;
+    }
+    .sidebar-desktop{
+      display:none;
+    }
+      body:has(#filtersToggle:checked) .filters-panel{
+      transform:translateX(0);
+    }
+    #filtersToggle:checked ~ .offcanvas-backdrop{
+      opacity:1;
+      pointer-events:auto;
+    }
+      .offcanvas-close{
+        display:block;
+            
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+        .offcanvas-header{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:18px 20px;
+    border-bottom:1px solid var(--line);
+  }
+   .ct_faq_support {
+    max-width: 100%;
+  }
+  .ct_blog_sidebar {
+    position: static;
+  }
+
+  .ct_blog_article_title {
+    font-size: 32px;
+  }
+  #ct_form_progressbar2 li:after{
+    bottom: 0px;
+    top: auto;
+    transform: unset;
+    width: 100%;
+  }
+  #ct_form_progressbar2 li#confirm:after{
+  display: block;
+}
+}
+
+@media screen and (max-width:767px){
+  .ct_main_banner_desc h1{
+    font-size:30px;
+  }
+  .ct_main_banner_desc p{
+    font-size: 16px;
+  }
+  .ct_px_60{
+    padding-inline: 30px;
+  }
+  .ct_care_item{
+    text-align: center;
+  }
+  .ct_care_item p ,.ct_care_icon{
+    margin-inline: auto;
+  }
+   .ct_blog_article_title {
+    font-size: 28px;
+  }
+
+  .ct_blog_author_row {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .ct_blog_share {
+    width: 100%;
+  }
+
+  .ct_article_navigation {
+    flex-direction: column;
+  }
+
+  .ct_article_navigation a {
+    max-width: 100%;
+  }
+
+  .ct_article_next {
+    text-align: left;
+  }
+}
+@media screen and (max-width: 575px) {
+  .ct_custom_container{
+    margin-inline: 30px;
+  }
+  .ct_main_banner_desc h1{
+    font-size:26px;
+  }
+  .ct_header {
+    gap: 15px;
+  }
+    .ct_login_main form {
+    padding: 20px;
+  }
+
+  .ct_w_100_575{
+    width: 100%;
+  }
+  .ct_health_img_left ,.ct_health_img_right {
+    height: 244px;
+    margin-top: 50px;
+  }
+ .ct_px_60{
+  padding-inline: 15px;
+ }
+ .ct_footer_bottom{
+  flex-direction: column;
+ }
+ #ct_form_progressbar2 li h5 {
+        font-size: 12px;
+    }
+}
