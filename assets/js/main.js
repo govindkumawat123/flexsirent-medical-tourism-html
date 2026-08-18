@@ -200,95 +200,99 @@ $(".previous").click(function () {
 
 
 $(document).ready(function () {
-  var current_fs, next_fs, previous_fs; //fieldsets
-  var opacity;
-  var current = 1;
-  var steps = $("fieldset").length;
 
-  setProgressBar(current);
+    var current = 1;
+    var steps = $("#msform2 fieldset").length;
 
-$(".ct_multistep_form_next").click(function () {
+    // Hide all fieldsets except first
+    $("#msform2 fieldset:not(:first)").hide();
 
-    current_fs = $(this).closest("fieldset");
-    next_fs = current_fs.next("fieldset");
+    setProgressBar(current);
 
-    $("#ct_form_progressbar2 li")
-        .eq($("fieldset").index(next_fs))
-        .addClass("active");
 
-    next_fs.show();
+    // NEXT BUTTON
+    $(".ct_multistep_form_next").click(function () {
 
-    current_fs.animate(
-        { opacity: 0 },
-        {
-            step: function (now) {
-                opacity = 1 - now;
+        var current_fs = $(this).closest("fieldset");
+        var next_fs = current_fs.next("fieldset");
 
-                current_fs.css({
-                    display: "none",
-                    position: "relative"
-                });
-
-                next_fs.css({
-                    opacity: opacity
-                });
-            },
-            duration: 500
+        if (!next_fs.length) {
+            return;
         }
-    );
 
-    setProgressBar(++current);
-});
+        // Progress
+        $("#ct_form_progressbar2 li")
+            .eq($("#msform2 fieldset").index(next_fs))
+            .addClass("active");
 
-$(".previous").click(function () {
+        // Hide current
+        current_fs.fadeOut(300, function () {
 
-    current_fs = $(this).closest("fieldset");
-    previous_fs = current_fs.prev("fieldset");
+            // Show next
+            next_fs.fadeIn(300);
 
-    $("#ct_form_progressbar2 li")
-        .eq($("fieldset").index(current_fs))
-        .removeClass("active");
+        });
 
-    previous_fs.show();
+        current++;
 
-    current_fs.animate(
-        { opacity: 0 },
-        {
-            step: function (now) {
-                opacity = 1 - now;
+        setProgressBar(current);
+    });
 
-                current_fs.css({
-                    display: "none",
-                    position: "relative"
-                });
 
-                previous_fs.css({
-                    opacity: opacity
-                });
-            },
-            duration: 500
+    // PREVIOUS BUTTON
+    $(".previous").click(function () {
+
+        var current_fs = $(this).closest("fieldset");
+        var previous_fs = current_fs.prev("fieldset");
+
+        if (!previous_fs.length) {
+            return;
         }
-    );
 
-    setProgressBar(--current);
-});
+        // Remove active progress
+        $("#ct_form_progressbar2 li")
+            .eq($("#msform2 fieldset").index(current_fs))
+            .removeClass("active");
 
-  function setProgressBar(curStep) {
-    var percent = parseFloat(100 / steps) * curStep;
-    percent = percent.toFixed();
-    $(".progress-bar").css("width", percent + "%");
-  }
+        // Hide current
+        current_fs.fadeOut(300, function () {
 
-  $(".submit").click(function () {
-    return false;
-  });
+            // Show previous
+            previous_fs.fadeIn(300);
 
-  $(".ct_apply_filter_btn").click(function () {
-    $(".ct_mobile_filter_category_content").addClass("active");
-  });
-  $(".ct_category_close_btn").click(function () {
-    $(".ct_mobile_filter_category_content").removeClass("active");
-  });
+        });
+
+        current--;
+
+        setProgressBar(current);
+    });
+
+
+    // PROGRESS BAR
+    function setProgressBar(curStep) {
+
+        var percent = (100 / steps) * curStep;
+
+        $(".progress-bar").css(
+            "width",
+            percent + "%"
+        );
+    }
+
+
+    $(".submit").click(function () {
+        return false;
+    });
+
+
+    $(".ct_apply_filter_btn").click(function () {
+        $(".ct_mobile_filter_category_content").addClass("active");
+    });
+
+    $(".ct_category_close_btn").click(function () {
+        $(".ct_mobile_filter_category_content").removeClass("active");
+    });
+
 });
  
 

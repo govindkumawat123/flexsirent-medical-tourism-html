@@ -159,14 +159,21 @@
     font-size: 32px;
   }
   #ct_form_progressbar2 li:after{
-    bottom: 0px;
+    bottom: -5px;
     top: auto;
     transform: unset;
     width: 100%;
   }
+  #ct_form_progressbar2 li:before{
+    width: 44px;
+    height: 44px;
+  }
   #ct_form_progressbar2 li#confirm:after{
   display: block;
 }
+
+
+
 }
 
 @media screen and (max-width:767px){

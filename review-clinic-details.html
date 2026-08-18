@@ -147,13 +147,13 @@
     </div>
    </section>
    <section class="">
-      <div class="container">
+      <div class="container-fluid ct_px_60">
         <div class="row">
           <div class="col-md-12">
             <div class="ct_multistep_form_card2 px-0 pt-4 pb-0 mt-3 mb-3">
               <form id="msform2">
                 <!-- progressbar -->
-                <ul id="ct_form_progressbar2">
+                <ul id="ct_form_progressbar2" class="">
                   <li class="active ct_flex_1" id="account">
                     
                     <h5>Appointment Details</h5>
@@ -182,7 +182,7 @@
             <!-- Image -->
             <div class="col-md-6">
               <img
-                src="images/apollo-hospital.jpg"
+                src="assets/img/review-clinic-detail-1.png"
                 alt="Apollo Hospitals Chennai"
                 class="et_clinic_img"
               />
@@ -195,18 +195,28 @@
                 Apollo Hospitals Chennai
               </h3>
 
-              <p class="et_clinic_location">
-                <i class="bi bi-geo-alt"></i>
-                Greams Road, Chennai, Tamil Nadu<br>
-                <span>600006, India</span>
-              </p>
 
-              <div class="et_doctor_info">
+
+          <div class="d-flex gap-2">
+                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M14.7138 13.8808L11.178 17.4167C10.8657 17.7293 10.442 17.9049 10.0001 17.9049C9.55822 17.9049 9.13447 17.7293 8.82217 17.4167L5.28551 13.8808C2.68211 11.2773 2.68218 7.05627 5.28567 4.45283C7.88916 1.84938 12.1102 1.84938 14.7137 4.45283C17.3172 7.05627 17.3172 11.2773 14.7138 13.8808V13.8808" stroke="#0D9488" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.5 9.16663C12.5 10.5464 11.3798 11.6666 10 11.6666C8.62021 11.6666 7.5 10.5464 7.5 9.16663C7.5 7.78684 8.62021 6.66663 10 6.66663C11.3798 6.66663 12.5 7.78684 12.5 9.16663V9.16663" stroke="#0D9488" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+              <p class="et_clinic_location">
+             
+
+                Greams Road, Chennai, Tamil Nadu
+               600006, India
+              </p>
+          </div>
+          <hr class="ct_text_4B5563">
+
+              <div class="et_doctor_info d-flex gap-2 align-items-center">
 
                 <img
-                  src="images/doctor.jpg"
+                  src="assets/img/review-clinic-detail-doc.png"
                   alt="Dr. James Wilson"
-                  class="et_doctor_img"
+                  class="ct_img_48"
                 >
 
                 <div>
@@ -222,14 +232,18 @@
 
 
           <!-- APPOINTMENT INFO -->
-          <div class="row g-2 mt-2">
+          <div class="row mt-4">
 
-            <div class="col-6 col-md-3">
+            
 
-              <div class="et_info_box">
+             <div class="col-xl-3 col-sm-6 mb-3">
+               <div class="et_info_box">
 
                 <span class="et_info_icon">
-                  <i class="bi bi-person"></i>
+               <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3337 5.83333C13.3337 7.67305 11.84 9.16667 10.0003 9.16667C8.16061 9.16667 6.66699 7.67305 6.66699 5.83333C6.66699 3.99362 8.16061 2.5 10.0003 2.5C11.84 2.5 13.3337 3.99362 13.3337 5.83333V5.83333M10.0003 11.6667C6.78082 11.6667 4.16699 14.2805 4.16699 17.5H15.8337C15.8337 14.2805 13.2198 11.6667 10.0003 11.6667V11.6667" stroke="#0D9488" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                 </span>
 
                 <div>
@@ -238,62 +252,80 @@
                 </div>
 
               </div>
+             </div>
 
-            </div>
-
-
-            <div class="col-6 col-md-3">
-
-              <div class="et_info_box">
-
-                <span class="et_info_icon">
-                  <i class="bi bi-calendar3"></i>
-                </span>
-
-                <div>
-                  <small>Date</small>
-                  <strong>24 July 2025</strong>
-                </div>
-
-              </div>
-
-            </div>
+          
 
 
-            <div class="col-6 col-md-3">
+           
+ <div class="col-xl-3 col-sm-6 mb-3">
 
-              <div class="et_info_box">
+   <div class="et_info_box">
 
-                <span class="et_info_icon">
-                  <i class="bi bi-clock"></i>
-                </span>
+     <span class="et_info_icon">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.38793 12.1142C6.73013 12.1142 7.05831 11.9783 7.30029 11.7363C7.54226 11.4943 7.6782 11.1662 7.6782 10.824C7.6782 10.4818 7.54226 10.1536 7.30029 9.9116C7.05831 9.66963 6.73013 9.53369 6.38793 9.53369C6.04573 9.53369 5.71754 9.66963 5.47557 9.9116C5.2336 10.1536 5.09766 10.4818 5.09766 10.824C5.09766 11.1662 5.2336 11.4943 5.47557 11.7363C5.71754 11.9783 6.04573 12.1142 6.38793 12.1142ZM6.38793 15.727C6.73013 15.727 7.05831 15.591 7.30029 15.3491C7.54226 15.1071 7.6782 14.7789 7.6782 14.4367C7.6782 14.0945 7.54226 13.7663 7.30029 13.5244C7.05831 13.2824 6.73013 13.1464 6.38793 13.1464C6.04573 13.1464 5.71754 13.2824 5.47557 13.5244C5.2336 13.7663 5.09766 14.0945 5.09766 14.4367C5.09766 14.7789 5.2336 15.1071 5.47557 15.3491C5.71754 15.591 6.04573 15.727 6.38793 15.727ZM11.291 10.824C11.291 11.1662 11.155 11.4943 10.913 11.7363C10.6711 11.9783 10.3429 12.1142 10.0007 12.1142C9.65848 12.1142 9.3303 11.9783 9.08832 11.7363C8.84635 11.4943 8.71041 11.1662 8.71041 10.824C8.71041 10.4818 8.84635 10.1536 9.08832 9.9116C9.3303 9.66963 9.65848 9.53369 10.0007 9.53369C10.3429 9.53369 10.6711 9.66963 10.913 9.9116C11.155 10.1536 11.291 10.4818 11.291 10.824ZM10.0007 15.727C10.3429 15.727 10.6711 15.591 10.913 15.3491C11.155 15.1071 11.291 14.7789 11.291 14.4367C11.291 14.0945 11.155 13.7663 10.913 13.5244C10.6711 13.2824 10.3429 13.1464 10.0007 13.1464C9.65848 13.1464 9.3303 13.2824 9.08832 13.5244C8.84635 13.7663 8.71041 14.0945 8.71041 14.4367C8.71041 14.7789 8.84635 15.1071 9.08832 15.3491C9.3303 15.591 9.65848 15.727 10.0007 15.727ZM14.9037 10.824C14.9037 11.1662 14.7678 11.4943 14.5258 11.7363C14.2838 11.9783 13.9556 12.1142 13.6134 12.1142C13.2712 12.1142 12.9431 11.9783 12.7011 11.7363C12.4591 11.4943 12.3232 11.1662 12.3232 10.824C12.3232 10.4818 12.4591 10.1536 12.7011 9.9116C12.9431 9.66963 13.2712 9.53369 13.6134 9.53369C13.9556 9.53369 14.2838 9.66963 14.5258 9.9116C14.7678 10.1536 14.9037 10.4818 14.9037 10.824Z" fill="#0A8489"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.87179 1.01782C6.07711 1.01782 6.27402 1.09939 6.4192 1.24457C6.56439 1.38975 6.64595 1.58666 6.64595 1.79198V2.56615H13.3554V1.79198C13.3554 1.58666 13.4369 1.38975 13.5821 1.24457C13.7273 1.09939 13.9242 1.01782 14.1295 1.01782C14.3348 1.01782 14.5317 1.09939 14.6769 1.24457C14.8221 1.38975 14.9037 1.58666 14.9037 1.79198V2.5744C15.0606 2.57853 15.2068 2.5861 15.3424 2.59711C15.7346 2.62808 16.1021 2.69827 16.4499 2.87581C16.9842 3.14798 17.4185 3.58231 17.6907 4.11653C17.8682 4.46439 17.9384 4.83186 17.9694 5.2241C18.0003 5.60086 18.0003 6.0602 18.0003 6.61243V14.5192C18.0003 15.0714 18.0003 15.5308 17.9694 15.9075C17.9384 16.2998 17.8682 16.6672 17.6907 17.0151C17.4188 17.5492 16.9848 17.9835 16.451 18.2558C16.1021 18.4334 15.7346 18.5036 15.3424 18.5345C14.9656 18.5655 14.5063 18.5655 13.9551 18.5655H6.04726C5.49503 18.5655 5.03569 18.5655 4.65893 18.5345C4.26669 18.5036 3.89922 18.4334 3.55136 18.2558C3.01745 17.9842 2.58316 17.5506 2.31064 17.0172C2.1331 16.6683 2.06291 16.3008 2.03194 15.9086C2.00098 15.5318 2.00098 15.0725 2.00098 14.5213V6.61243C2.00098 6.0602 2.00098 5.60086 2.03194 5.2241C2.06291 4.83186 2.1331 4.46439 2.31064 4.11653C2.58281 3.58231 3.01714 3.14798 3.55136 2.87581C3.89922 2.69827 4.26669 2.62808 4.65893 2.59711C4.7945 2.5861 4.94073 2.57853 5.09762 2.5744V1.79198C5.09762 1.69032 5.11765 1.58965 5.15655 1.49573C5.19546 1.4018 5.25248 1.31646 5.32437 1.24457C5.39626 1.17268 5.4816 1.11566 5.57553 1.07675C5.66945 1.03785 5.77012 1.01782 5.87179 1.01782ZM5.09762 4.37252V4.12273C4.99324 4.12594 4.88895 4.13179 4.78486 4.14028C4.48862 4.16402 4.3472 4.20737 4.2543 4.25485C4.01113 4.37862 3.81345 4.5763 3.68968 4.81947C3.6422 4.91237 3.59885 5.05379 3.57511 5.35003C3.55033 5.65557 3.5493 6.05194 3.5493 6.6434V7.21112H16.452V6.6434C16.452 6.05297 16.452 5.65557 16.4262 5.35003C16.4025 5.05379 16.3591 4.91237 16.3116 4.81947C16.1878 4.5763 15.9902 4.37862 15.747 4.25485C15.6541 4.20737 15.5127 4.16402 15.2154 4.14028C15.1117 4.13181 15.0077 4.12596 14.9037 4.12273V4.37252C14.9037 4.57785 14.8221 4.77476 14.6769 4.91994C14.5317 5.06512 14.3348 5.14669 14.1295 5.14669C13.9242 5.14669 13.7273 5.06512 13.5821 4.91994C13.4369 4.77476 13.3554 4.57785 13.3554 4.37252V4.11447H6.64595V4.37252C6.64595 4.57785 6.56439 4.77476 6.4192 4.91994C6.27402 5.06512 6.07711 5.14669 5.87179 5.14669C5.66647 5.14669 5.46956 5.06512 5.32437 4.91994C5.17919 4.77476 5.09762 4.57785 5.09762 4.37252ZM16.452 8.24333H3.5493V14.4882C3.5493 15.0787 3.5493 15.4761 3.57511 15.7806C3.59885 16.0779 3.6422 16.2193 3.68968 16.3122C3.81355 16.5558 4.0107 16.7529 4.2543 16.8768C4.3472 16.9243 4.48862 16.9676 4.78486 16.9914C5.0904 17.0161 5.48677 17.0172 6.07823 17.0172H13.9231C14.5135 17.0172 14.9109 17.0172 15.2154 16.9914C15.5127 16.9676 15.6541 16.9243 15.747 16.8768C15.9902 16.753 16.1878 16.5553 16.3116 16.3122C16.3591 16.2193 16.4025 16.0779 16.4262 15.7806C16.451 15.4761 16.452 15.0787 16.452 14.4882V8.24333Z" fill="#0A8489"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.67773 5.66283C7.67773 5.45751 7.7593 5.2606 7.90448 5.11542C8.04967 4.97024 8.24658 4.88867 8.4519 4.88867H11.5485C11.7539 4.88867 11.9508 4.97024 12.096 5.11542C12.2411 5.2606 12.3227 5.45751 12.3227 5.66283C12.3227 5.86815 12.2411 6.06507 12.096 6.21025C11.9508 6.35543 11.7539 6.437 11.5485 6.437H8.4519C8.24658 6.437 8.04967 6.35543 7.90448 6.21025C7.7593 6.06507 7.67773 5.86815 7.67773 5.66283Z" fill="#0A8489"/>
+</svg>
 
-                <div>
-                  <small>Time</small>
-                  <strong>10:30 AM</strong>
-                </div>
+     </span>
 
-              </div>
+     <div>
+       <small>Date</small>
+       <strong>24 July 2025</strong>
+     </div>
 
-            </div>
+   </div>
+ </div>
+
+           
 
 
-            <div class="col-6 col-md-3">
+           <div class="col-xl-3 col-sm-6 mb-3">
 
-              <div class="et_info_box">
+             <div class="et_info_box">
+  
+               <span class="et_info_icon">
+                 <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M10.0003 1.66663C14.6028 1.66663 18.3337 5.39746 18.3337 9.99996C18.3337 14.6025 14.6028 18.3333 10.0003 18.3333C5.39783 18.3333 1.66699 14.6025 1.66699 9.99996C1.66699 5.39746 5.39783 1.66663 10.0003 1.66663ZM10.0003 3.33329C8.23222 3.33329 6.53652 4.03567 5.28628 5.28591C4.03604 6.53616 3.33366 8.23185 3.33366 9.99996C3.33366 11.7681 4.03604 13.4638 5.28628 14.714C6.53652 15.9642 8.23222 16.6666 10.0003 16.6666C11.7684 16.6666 13.4641 15.9642 14.7144 14.714C15.9646 13.4638 16.667 11.7681 16.667 9.99996C16.667 8.23185 15.9646 6.53616 14.7144 5.28591C13.4641 4.03567 11.7684 3.33329 10.0003 3.33329ZM10.0003 4.99996C10.2044 4.99999 10.4014 5.07492 10.554 5.21056C10.7065 5.34619 10.8039 5.53308 10.8278 5.73579L10.8337 5.83329V9.65496L13.0895 11.9108C13.2389 12.0608 13.3257 12.262 13.3322 12.4736C13.3386 12.6852 13.2643 12.8914 13.1243 13.0502C12.9843 13.209 12.789 13.3085 12.5783 13.3286C12.3675 13.3487 12.157 13.2878 11.9895 13.1583L11.9112 13.0891L9.41116 10.5891C9.28164 10.4595 9.19846 10.2908 9.17449 10.1091L9.16699 9.99996V5.83329C9.16699 5.61228 9.25479 5.40032 9.41107 5.24404C9.56735 5.08776 9.77931 4.99996 10.0003 4.99996Z" fill="#0A8489"/>
+  </svg>
+  
+               </span>
+  
+               <div>
+                 <small>Time</small>
+                 <strong>10:30 AM</strong>
+               </div>
+  
+             </div>
+           </div>
 
-                <span class="et_info_icon">
-                  <i class="bi bi-person"></i>
-                </span>
 
-                <div>
-                  <small>For</small>
-                  <strong>Self</strong>
-                </div>
+         
 
-              </div>
 
-            </div>
+           
+ <div class="col-xl-3 col-sm-6 mb-3">
+   <div class="et_info_box">
+
+     <span class="et_info_icon">
+      <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M13.3337 5.83333C13.3337 7.67305 11.84 9.16667 10.0003 9.16667C8.16061 9.16667 6.66699 7.67305 6.66699 5.83333C6.66699 3.99362 8.16061 2.5 10.0003 2.5C11.84 2.5 13.3337 3.99362 13.3337 5.83333V5.83333M10.0003 11.6667C6.78082 11.6667 4.16699 14.2805 4.16699 17.5H15.8337C15.8337 14.2805 13.2198 11.6667 10.0003 11.6667V11.6667" stroke="#0D9488" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+     </span>
+
+     <div>
+       <small>For</small>
+       <strong>Self</strong>
+     </div>
+
+   </div>
+
+ </div>
+
+           
 
           </div>
 
@@ -301,17 +333,17 @@
 
 
         <!-- PATIENT INFORMATION -->
-        <div class="et_patient_card">
+        <div class="et_patient_card et_clinic_card mt-4">
 
-          <h3 class="et_card_title">
+          <h3 class="et_card_title mb-4">
             Patient Information
           </h3>
 
 
-          <div class="row g-3">
+          <div class="row ">
 
             <!-- Full Name -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Full Name *
@@ -327,7 +359,7 @@
 
 
             <!-- Email -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Email Address *
@@ -343,7 +375,7 @@
 
 
             <!-- Phone -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Phone Number *
@@ -365,7 +397,7 @@
 
 
             <!-- DOB -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Date of Birth *
@@ -387,63 +419,66 @@
 
 
             <!-- Gender -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Gender *
               </label>
 
-              <div class="et_gender_group">
+             <div class="et_gender_group">
 
-                <label class="et_gender_item active">
+    <label class="et_gender_item">
 
-                  <input
-                    type="radio"
-                    name="gender"
-                    checked
-                  >
+        <input
+            type="radio"
+            name="gender"
+            value="male"
+            checked
+        >
 
-                  <span></span>
+        <span></span>
 
-                  Male
+        Male
 
-                </label>
-
-
-                <label class="et_gender_item">
-
-                  <input
-                    type="radio"
-                    name="gender"
-                  >
-
-                  <span></span>
-
-                  Female
-
-                </label>
+    </label>
 
 
-                <label class="et_gender_item">
+    <label class="et_gender_item">
 
-                  <input
-                    type="radio"
-                    name="gender"
-                  >
+        <input
+            type="radio"
+            name="gender"
+            value="female"
+        >
 
-                  <span></span>
+        <span></span>
 
-                  Other
+        Female
 
-                </label>
+    </label>
 
-              </div>
+
+    <label class="et_gender_item">
+
+        <input
+            type="radio"
+            name="gender"
+            value="other"
+        >
+
+        <span></span>
+
+        Other
+
+    </label>
+
+</div>
 
             </div>
 
 
             <!-- Nationality -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Nationality *
@@ -466,7 +501,7 @@
 
 
             <!-- Address -->
-            <div class="col-12">
+            <div class="col-12 ct_mb_20">
 
               <label class="et_form_label">
                 Address *
@@ -482,7 +517,7 @@
 
 
             <!-- Medical History -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Medical History (Optional)
@@ -490,6 +525,7 @@
 
               <textarea
                 class="form-control et_form_control et_textarea"
+                rows="3"
                 placeholder="Share any relevant medical history"
               ></textarea>
 
@@ -497,7 +533,7 @@
 
 
             <!-- Allergies -->
-            <div class="col-md-6">
+            <div class="col-md-6 ct_mb_20">
 
               <label class="et_form_label">
                 Allergies (Optional)
@@ -505,6 +541,7 @@
 
               <textarea
                 class="form-control et_form_control et_textarea"
+                 rows="3"
                 placeholder="Enter any allergies"
               ></textarea>
 
@@ -518,19 +555,90 @@
                 Upload Medical Reports (Optional)
               </label>
 
-              <div class="et_upload_box">
+           <div class="et_upload_box">
 
-                <i class="bi bi-cloud-upload"></i>
+    <input
+        type="file"
+        id="medical_reports"
+        class="et_file_input"
+        accept=".pdf,.jpg,.jpeg,.png"
+        multiple
+    >
 
-                <h6>
-                  Click to upload or drag & drop
-                </h6>
+    <label for="medical_reports" class="et_upload_label">
 
-                <p>
-                  PDF, JPG, PNG (Max. 10MB each)
-                </p>
+        <svg width="40" height="52" viewBox="0 0 40 52" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
 
-              </div>
+            <g clip-path="url(#clip0_511_7314)">
+                <path
+                    d="M11.6667 26.6668C8.26748 26.6706 5.40975 24.1162 5.03357 20.7379C4.65739 17.3595 6.88324 14.2392 10.2 13.4951C9.23558 8.997 12.1044 4.56208 16.6025 3.59761C21.1007 2.63314 25.5356 5.502 26.5 10.0001H26.6667C30.948 9.99581 34.536 13.2363 34.9662 17.496C35.3965 21.7556 32.529 25.6482 28.3334 26.5001M25 21.6668L20 16.6668M20 16.6668L15 21.6668M20 16.6668V36.6668"
+                    stroke="#0D9488"
+                    stroke-width="3.33333"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                />
+            </g>
+
+            <defs>
+                <clipPath id="clip0_511_7314">
+                    <rect width="40" height="40" fill="white"/>
+                </clipPath>
+            </defs>
+
+        </svg>
+
+        <h6>
+            Click to upload or drag & drop
+        </h6>
+
+        <p>
+            PDF, JPG, PNG (Max. 10MB each)
+        </p>
+
+    </label>
+
+</div>
+
+
+<div class="et_upload_box_prev mt-4 ct_custom_scroll">
+  <div class="et_upload_box_prev_img">
+   <img src="assets/img/review-clinic-detail-doc.png"/>
+   <div class="et_upload_box_prev_remove">
+<i class="fa-solid fa-xmark"></i>
+   </div>
+  </div>
+   <div class="et_upload_box_prev_img">
+   <img src="assets/img/review-clinic-detail-doc.png"/>
+    <div class="et_upload_box_prev_remove">
+<i class="fa-solid fa-xmark"></i>
+   </div>
+  </div>
+   <div class="et_upload_box_prev_img">
+   <img src="assets/img/review-clinic-detail-doc.png"/>
+    <div class="et_upload_box_prev_remove">
+<i class="fa-solid fa-xmark"></i>
+   </div>
+  </div>
+   <div class="et_upload_box_prev_img">
+   <img src="assets/img/review-clinic-detail-doc.png"/>
+    <div class="et_upload_box_prev_remove">
+<i class="fa-solid fa-xmark"></i>
+   </div>
+  </div>
+   <div class="et_upload_box_prev_img">
+   <img src="assets/img/review-clinic-detail-doc.png"/>
+    <div class="et_upload_box_prev_remove">
+<i class="fa-solid fa-xmark"></i>
+   </div>
+  </div>
+   <div class="et_upload_box_prev_img">
+   <img src="assets/img/review-clinic-detail-doc.png"/>
+    <div class="et_upload_box_prev_remove">
+<i class="fa-solid fa-xmark"></i>
+   </div>
+  </div>
+</div>
 
             </div>
 
@@ -542,7 +650,11 @@
           <div class="et_secure_box">
 
             <div class="et_secure_icon">
-              <i class="bi bi-lock"></i>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 13C5 12.4696 5.21071 11.9609 5.58579 11.5858C5.96086 11.2107 6.46957 11 7 11H17C17.5304 11 18.0391 11.2107 18.4142 11.5858C18.7893 11.9609 19 12.4696 19 13V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V13Z" stroke="#0A8489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M8 11V7C8 5.93913 8.42143 4.92172 9.17157 4.17157C9.92172 3.42143 10.9391 3 12 3C13.0609 3 14.0783 3.42143 14.8284 4.17157C15.5786 4.92172 16 5.93913 16 7V11M11 16C11 16.2652 11.1054 16.5196 11.2929 16.7071C11.4804 16.8946 11.7348 17 12 17C12.2652 17 12.5196 16.8946 12.7071 16.7071C12.8946 16.5196 13 16.2652 13 16C13 15.7348 12.8946 15.4804 12.7071 15.2929C12.5196 15.1054 12.2652 15 12 15C11.7348 15 11.4804 15.1054 11.2929 15.2929C11.1054 15.4804 11 15.7348 11 16Z" stroke="#0A8489" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
             </div>
 
             <div>
@@ -567,7 +679,7 @@
       <!-- RIGHT SUMMARY -->
       <div class="col-lg-4">
 
-        <div class="et_summary_card">
+        <div class="et_summary_card et_clinic_card">
 
           <h3 class="et_summary_title">
             Appointment Summary
@@ -575,33 +687,41 @@
 
 
           <!-- Clinic -->
-          <div class="et_summary_clinic">
+          <div class="row">
 
-            <img
-              src="images/apollo-hospital.jpg"
+         <div class="col-md-5 col-sm-6 mb-sm-0 mb-3">
+         <div class="et_summary_clinic">
+              <img
+              src="assets/img/review-clinic-detail-1.png"
               alt="Apollo Hospitals"
             >
+         </div>
+         </div>
 
-            <div>
+         <div class="col-md-7 col-sm-6">
+           <div class="et_summary_clinic">
 
-              <h5>
-                Apollo Hospitals, Chennai
-              </h5>
+             <h5>
+               Apollo Hospitals, Chennai
+             </h5>
 
-              <p>
-                Orthopedic Consultation
-              </p>
+             <p>
+               Orthopedic Consultation
+             </p>
 
-              <span>
-                <i class="bi bi-person"></i>
-                Dr. James Wilson
-              </span>
+             <div class="d-flex gap-2 align-items-center">
+              <img src="assets/img/review-clinic-detail-doc.png" class="ct_img_20">
+               <span>Dr. James Wilson</span>
+             </div>
 
-            </div>
+           </div>
+
+         </div>
 
           </div>
 
 
+          <hr class="ct_text_4B5563">
           <!-- Details -->
 
           <div class="et_summary_details">
@@ -609,7 +729,12 @@
             <div class="et_summary_row">
 
               <span>
-                <i class="bi bi-calendar3"></i>
+              <svg class="me-2" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.38793 12.1142C6.73013 12.1142 7.05831 11.9783 7.30029 11.7363C7.54226 11.4943 7.6782 11.1662 7.6782 10.824C7.6782 10.4818 7.54226 10.1536 7.30029 9.9116C7.05831 9.66963 6.73013 9.53369 6.38793 9.53369C6.04573 9.53369 5.71754 9.66963 5.47557 9.9116C5.2336 10.1536 5.09766 10.4818 5.09766 10.824C5.09766 11.1662 5.2336 11.4943 5.47557 11.7363C5.71754 11.9783 6.04573 12.1142 6.38793 12.1142ZM6.38793 15.727C6.73013 15.727 7.05831 15.591 7.30029 15.3491C7.54226 15.1071 7.6782 14.7789 7.6782 14.4367C7.6782 14.0945 7.54226 13.7663 7.30029 13.5244C7.05831 13.2824 6.73013 13.1464 6.38793 13.1464C6.04573 13.1464 5.71754 13.2824 5.47557 13.5244C5.2336 13.7663 5.09766 14.0945 5.09766 14.4367C5.09766 14.7789 5.2336 15.1071 5.47557 15.3491C5.71754 15.591 6.04573 15.727 6.38793 15.727ZM11.291 10.824C11.291 11.1662 11.155 11.4943 10.913 11.7363C10.6711 11.9783 10.3429 12.1142 10.0007 12.1142C9.65848 12.1142 9.3303 11.9783 9.08832 11.7363C8.84635 11.4943 8.71041 11.1662 8.71041 10.824C8.71041 10.4818 8.84635 10.1536 9.08832 9.9116C9.3303 9.66963 9.65848 9.53369 10.0007 9.53369C10.3429 9.53369 10.6711 9.66963 10.913 9.9116C11.155 10.1536 11.291 10.4818 11.291 10.824ZM10.0007 15.727C10.3429 15.727 10.6711 15.591 10.913 15.3491C11.155 15.1071 11.291 14.7789 11.291 14.4367C11.291 14.0945 11.155 13.7663 10.913 13.5244C10.6711 13.2824 10.3429 13.1464 10.0007 13.1464C9.65848 13.1464 9.3303 13.2824 9.08832 13.5244C8.84635 13.7663 8.71041 14.0945 8.71041 14.4367C8.71041 14.7789 8.84635 15.1071 9.08832 15.3491C9.3303 15.591 9.65848 15.727 10.0007 15.727ZM14.9037 10.824C14.9037 11.1662 14.7678 11.4943 14.5258 11.7363C14.2838 11.9783 13.9556 12.1142 13.6134 12.1142C13.2712 12.1142 12.9431 11.9783 12.7011 11.7363C12.4591 11.4943 12.3232 11.1662 12.3232 10.824C12.3232 10.4818 12.4591 10.1536 12.7011 9.9116C12.9431 9.66963 13.2712 9.53369 13.6134 9.53369C13.9556 9.53369 14.2838 9.66963 14.5258 9.9116C14.7678 10.1536 14.9037 10.4818 14.9037 10.824Z" fill="#0A8489"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.87179 1.01782C6.07711 1.01782 6.27402 1.09939 6.4192 1.24457C6.56439 1.38975 6.64595 1.58666 6.64595 1.79198V2.56615H13.3554V1.79198C13.3554 1.58666 13.4369 1.38975 13.5821 1.24457C13.7273 1.09939 13.9242 1.01782 14.1295 1.01782C14.3348 1.01782 14.5317 1.09939 14.6769 1.24457C14.8221 1.38975 14.9037 1.58666 14.9037 1.79198V2.5744C15.0606 2.57853 15.2068 2.5861 15.3424 2.59711C15.7346 2.62808 16.1021 2.69827 16.4499 2.87581C16.9842 3.14798 17.4185 3.58231 17.6907 4.11653C17.8682 4.46439 17.9384 4.83186 17.9694 5.2241C18.0003 5.60086 18.0003 6.0602 18.0003 6.61243V14.5192C18.0003 15.0714 18.0003 15.5308 17.9694 15.9075C17.9384 16.2998 17.8682 16.6672 17.6907 17.0151C17.4188 17.5492 16.9848 17.9835 16.451 18.2558C16.1021 18.4334 15.7346 18.5036 15.3424 18.5345C14.9656 18.5655 14.5063 18.5655 13.9551 18.5655H6.04726C5.49503 18.5655 5.03569 18.5655 4.65893 18.5345C4.26669 18.5036 3.89922 18.4334 3.55136 18.2558C3.01745 17.9842 2.58316 17.5506 2.31064 17.0172C2.1331 16.6683 2.06291 16.3008 2.03194 15.9086C2.00098 15.5318 2.00098 15.0725 2.00098 14.5213V6.61243C2.00098 6.0602 2.00098 5.60086 2.03194 5.2241C2.06291 4.83186 2.1331 4.46439 2.31064 4.11653C2.58281 3.58231 3.01714 3.14798 3.55136 2.87581C3.89922 2.69827 4.26669 2.62808 4.65893 2.59711C4.7945 2.5861 4.94073 2.57853 5.09762 2.5744V1.79198C5.09762 1.69032 5.11765 1.58965 5.15655 1.49573C5.19546 1.4018 5.25248 1.31646 5.32437 1.24457C5.39626 1.17268 5.4816 1.11566 5.57553 1.07675C5.66945 1.03785 5.77012 1.01782 5.87179 1.01782ZM5.09762 4.37252V4.12273C4.99324 4.12594 4.88895 4.13179 4.78486 4.14028C4.48862 4.16402 4.3472 4.20737 4.2543 4.25485C4.01113 4.37862 3.81345 4.5763 3.68968 4.81947C3.6422 4.91237 3.59885 5.05379 3.57511 5.35003C3.55033 5.65557 3.5493 6.05194 3.5493 6.6434V7.21112H16.452V6.6434C16.452 6.05297 16.452 5.65557 16.4262 5.35003C16.4025 5.05379 16.3591 4.91237 16.3116 4.81947C16.1878 4.5763 15.9902 4.37862 15.747 4.25485C15.6541 4.20737 15.5127 4.16402 15.2154 4.14028C15.1117 4.13181 15.0077 4.12596 14.9037 4.12273V4.37252C14.9037 4.57785 14.8221 4.77476 14.6769 4.91994C14.5317 5.06512 14.3348 5.14669 14.1295 5.14669C13.9242 5.14669 13.7273 5.06512 13.5821 4.91994C13.4369 4.77476 13.3554 4.57785 13.3554 4.37252V4.11447H6.64595V4.37252C6.64595 4.57785 6.56439 4.77476 6.4192 4.91994C6.27402 5.06512 6.07711 5.14669 5.87179 5.14669C5.66647 5.14669 5.46956 5.06512 5.32437 4.91994C5.17919 4.77476 5.09762 4.57785 5.09762 4.37252ZM16.452 8.24333H3.5493V14.4882C3.5493 15.0787 3.5493 15.4761 3.57511 15.7806C3.59885 16.0779 3.6422 16.2193 3.68968 16.3122C3.81355 16.5558 4.0107 16.7529 4.2543 16.8768C4.3472 16.9243 4.48862 16.9676 4.78486 16.9914C5.0904 17.0161 5.48677 17.0172 6.07823 17.0172H13.9231C14.5135 17.0172 14.9109 17.0172 15.2154 16.9914C15.5127 16.9676 15.6541 16.9243 15.747 16.8768C15.9902 16.753 16.1878 16.5553 16.3116 16.3122C16.3591 16.2193 16.4025 16.0779 16.4262 15.7806C16.451 15.4761 16.452 15.0787 16.452 14.4882V8.24333Z" fill="#0A8489"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.67773 5.66283C7.67773 5.45751 7.7593 5.2606 7.90448 5.11542C8.04967 4.97024 8.24658 4.88867 8.4519 4.88867H11.5485C11.7539 4.88867 11.9508 4.97024 12.096 5.11542C12.2411 5.2606 12.3227 5.45751 12.3227 5.66283C12.3227 5.86815 12.2411 6.06507 12.096 6.21025C11.9508 6.35543 11.7539 6.437 11.5485 6.437H8.4519C8.24658 6.437 8.04967 6.35543 7.90448 6.21025C7.7593 6.06507 7.67773 5.86815 7.67773 5.66283Z" fill="#0A8489"/>
+</svg>
+
                 Date
               </span>
 
@@ -622,8 +747,11 @@
 
             <div class="et_summary_row">
 
-              <span>
-                <i class="bi bi-clock"></i>
+              <span class="">
+              <svg class="me-2" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.0003 1.66663C14.6028 1.66663 18.3337 5.39746 18.3337 9.99996C18.3337 14.6025 14.6028 18.3333 10.0003 18.3333C5.39783 18.3333 1.66699 14.6025 1.66699 9.99996C1.66699 5.39746 5.39783 1.66663 10.0003 1.66663ZM10.0003 3.33329C8.23222 3.33329 6.53652 4.03567 5.28628 5.28591C4.03604 6.53616 3.33366 8.23185 3.33366 9.99996C3.33366 11.7681 4.03604 13.4638 5.28628 14.714C6.53652 15.9642 8.23222 16.6666 10.0003 16.6666C11.7684 16.6666 13.4641 15.9642 14.7144 14.714C15.9646 13.4638 16.667 11.7681 16.667 9.99996C16.667 8.23185 15.9646 6.53616 14.7144 5.28591C13.4641 4.03567 11.7684 3.33329 10.0003 3.33329ZM10.0003 4.99996C10.2044 4.99999 10.4014 5.07492 10.554 5.21056C10.7065 5.34619 10.8039 5.53308 10.8278 5.73579L10.8337 5.83329V9.65496L13.0895 11.9108C13.2389 12.0608 13.3257 12.262 13.3322 12.4736C13.3386 12.6852 13.2643 12.8914 13.1243 13.0502C12.9843 13.209 12.789 13.3085 12.5783 13.3286C12.3675 13.3487 12.157 13.2878 11.9895 13.1583L11.9112 13.0891L9.41116 10.5891C9.28164 10.4595 9.19846 10.2908 9.17449 10.1091L9.16699 9.99996V5.83329C9.16699 5.61228 9.25479 5.40032 9.41107 5.24404C9.56735 5.08776 9.77931 4.99996 10.0003 4.99996Z" fill="#0A8489"/>
+</svg>
+
                 Time
               </span>
 
@@ -636,8 +764,10 @@
 
             <div class="et_summary_row">
 
-              <span>
-                <i class="bi bi-clipboard"></i>
+              <span><svg class="me-2" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.49935 4.16667H5.83268C4.91221 4.16667 4.16602 4.91286 4.16602 5.83333V15.8333C4.16602 16.7538 4.91221 17.5 5.83268 17.5H14.166C15.0865 17.5 15.8327 16.7538 15.8327 15.8333V5.83333C15.8327 4.91286 15.0865 4.16667 14.166 4.16667H12.4993M7.49935 4.16667C7.49935 5.08714 8.24554 5.83333 9.16602 5.83333H10.8327C11.7532 5.83333 12.4993 5.08714 12.4993 4.16667M7.49935 4.16667C7.49935 3.24619 8.24554 2.5 9.16602 2.5H10.8327C11.7532 2.5 12.4993 3.24619 12.4993 4.16667" stroke="#0A8489" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <i class="bi bi-clipboard"></i>
                 Treatment
               </span>
 
@@ -651,7 +781,11 @@
             <div class="et_summary_row">
 
               <span>
-                <i class="bi bi-geo-alt"></i>
+                <svg class="me-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.7717 11.1047L8.94299 13.9334C8.69316 14.1835 8.35416 14.324 8.00066 14.324C7.64716 14.324 7.30816 14.1835 7.05833 13.9334L4.22899 11.1047C2.14627 9.02189 2.14633 5.64506 4.22912 3.56231C6.31191 1.47956 9.68874 1.47956 11.7715 3.56231C13.8543 5.64506 13.8544 9.02189 11.7717 11.1047V11.1047" stroke="#0A8489" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 7.33337C10 8.4372 9.10383 9.33337 8 9.33337C6.89617 9.33337 6 8.4372 6 7.33337C6 6.22954 6.89617 5.33337 8 5.33337C9.10383 5.33337 10 6.22954 10 7.33337V7.33337" stroke="#0A8489" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
                 Location
               </span>
 
@@ -698,6 +832,7 @@
           </div>
 
 
+            <hr class="ct_text_4B5563">
           <!-- Total -->
 
           <div class="et_total_row">
@@ -715,9 +850,9 @@
 
             <button
                     type="button"
-                    class="ct_orange_btn ct_form_next float-end mt-4"
+                    class="ct_orange_btn ct_form_next ct_multistep_form_next w-100 mt-4"
                   >
-                    Continue to Payment
+                    Continue to Payment <i class="fa-solid fa-arrow-right ms-2"></i>
                   </button>
         </div>
 
@@ -733,7 +868,7 @@
                 <fieldset class="ct_mt_60">
                   <div class="ct_form-card">
                     <div class="row">
-                      <div class="col-lg-7 mb-4 mb-lg-0">
+                      <div class="col-lg-8 mb-4 mb-lg-0">
                         <h4 class="ct_fs_22 ct_fw_600 mb-3">
                           Choose Payment Method
                         </h4>
@@ -752,7 +887,7 @@
                               </label>
                               <div>
                                 <p
-                                  class="mb-0 d-flex align-items-center gap-2 ct_fw_600"
+                                  class="mb-0 d-flex align-items-center gap-2 ct_fw_600 ct_fs_14"
                                 >
                                   <img
                                     src="assets/img/creadit_card.png"
@@ -771,7 +906,7 @@
                             <img src="assets/img/american_card.png" alt="" />
                           </div>
                         </div>
-                        <div class="ct_payment_method_card mt-4">
+                        <div class="ct_payment_method_card ct_mt_22">
                           <div class="ct_radio-container">
                             <div
                               class="ct_radio-wrapper d-flex align-items-center gap-2 mb-0"
@@ -786,7 +921,7 @@
                               </label>
                               <div>
                                 <p
-                                  class="mb-0 d-flex align-items-center gap-2 ct_fw_600"
+                                  class="mb-0 d-flex align-items-center gap-2 ct_fw_600 ct_fs_14"
                                 >
                                   <img
                                     src="assets/img/paypal_icon_small.png"
@@ -799,19 +934,19 @@
                           </div>
                         </div>
 
-                        <div class="border ct_border_radius_15 ct_p_35 mt-4">
+                        <div class="et_clinic_card mt-4">
                           <h4 class="ct_fw_600 ct_fs_18 mb-4">Card Details</h4>
 
                           <div class="row">
                             <!-- Card Number -->
                             <div class="col-12">
                               <div class="form-group mb-3">
-                                <label class="mb-2 ct_fw_500">
+                                <label class="mb-2 ct_fw_500 ct_fs_14">
                                   Card Number
                                 </label>
                                 <input
                                   type="text"
-                                  class="form-control ct_input ct_h_50"
+                                  class="form-control et_form_control"
                                   placeholder="1234 5678 9012 3456"
                                 />
                               </div>
@@ -820,12 +955,12 @@
                             <!-- Card Holder Name -->
                             <div class="col-12">
                               <div class="form-group mb-3">
-                                <label class="mb-2 ct_fw_500">
+                                <label class="mb-2 ct_fw_500 ct_fs_14">
                                   Card Holder Name
                                 </label>
                                 <input
                                   type="text"
-                                  class="form-control ct_input ct_h_50"
+                                  class="form-control et_form_control"
                                   placeholder="Name on card"
                                 />
                               </div>
@@ -834,12 +969,12 @@
                             <!-- Expiry Date -->
                             <div class="col-md-6">
                               <div class="form-group mb-3">
-                                <label class="mb-2 ct_fw_500">
+                                <label class="mb-2 ct_fw_500 ct_fs_14">
                                   Expiry Date
                                 </label>
                                 <input
                                   type="text"
-                                  class="form-control ct_input ct_h_50"
+                                  class="form-control et_form_control"
                                   placeholder="MM/YY"
                                 />
                               </div>
@@ -848,11 +983,11 @@
                             <!-- CVV -->
                             <div class="col-md-6">
                               <div class="form-group mb-3">
-                                <label class="mb-2 ct_fw_500"> CVV </label>
+                                <label class="mb-2 ct_fw_500 ct_fs_14"> CVV </label>
                                 <input
                                   type="password"
                                   maxlength="4"
-                                  class="form-control ct_input ct_h_50"
+                                  class="form-control et_form_control"
                                   placeholder="123"
                                 />
                               </div>
@@ -860,142 +995,208 @@
                           </div>
                         </div>
                       </div>
-                      <div class="col-lg-5 mb-4 mb-lg-0">
-                        <div class="ct_outline_border py-4 px-3">
-                          <h5 class="ct_fs_18 ct_fw_600 mb-3">
-                            Booking Summary
-                          </h5>
-                          <figure class="ct_booking_summary_card">
-                            <img
-                              src="assets/img/appointment_summery_img_1.jpg"
-                              alt=""
-                            />
-                            <figcaption class="ct_mt_30">
-                              <ul>
-                                <li>
-                                  <p class="mb-0">
-                                    <svg
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 20 20"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <mask
-                                        id="mask0_38_10007"
-                                        style="mask-type: luminance"
-                                        maskUnits="userSpaceOnUse"
-                                        x="0"
-                                        y="0"
-                                        width="20"
-                                        height="20"
-                                      >
-                                        <path
-                                          d="M0 0H20V20H0V0Z"
-                                          fill="white"
-                                        />
-                                      </mask>
-                                      <g mask="url(#mask0_38_10007)">
-                                        <path
-                                          d="M9.22923 19.5965C3.55352 11.3684 2.5 10.5239 2.5 7.5C2.5 3.35785 5.85785 0 10 0C14.1421 0 17.5 3.35785 17.5 7.5C17.5 10.5239 16.4465 11.3684 10.7708 19.5965C10.3983 20.1345 9.60164 20.1345 9.22923 19.5965ZM10 10.625C11.7259 10.625 13.125 9.2259 13.125 7.5C13.125 5.7741 11.7259 4.375 10 4.375C8.2741 4.375 6.875 5.7741 6.875 7.5C6.875 9.2259 8.2741 10.625 10 10.625Z"
-                                          fill="#9CA3AF"
-                                        />
-                                      </g>
-                                    </svg>
+                       <!-- RIGHT SUMMARY -->
+      <div class="col-lg-4">
 
-                                    Apollo Hospitals Chennai, Chennai, India
-                                  </p>
-                                </li>
-                                <li class="mt-3">
-                                  <p class="mb-0">
-                                    <svg
-                                      width="20"
-                                      height="20"
-                                      viewBox="0 0 20 20"
-                                      fill="none"
-                                      xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                      <mask
-                                        id="mask0_38_10019"
-                                        style="mask-type: luminance"
-                                        maskUnits="userSpaceOnUse"
-                                        x="0"
-                                        y="0"
-                                        width="20"
-                                        height="20"
-                                      >
-                                        <path
-                                          d="M0 0H20V20H0V0Z"
-                                          fill="white"
-                                        />
-                                      </mask>
-                                      <g mask="url(#mask0_38_10019)">
-                                        <path
-                                          d="M1.25 18.125C1.25 19.1601 2.08984 20 3.125 20H16.875C17.9101 20 18.75 19.1601 18.75 18.125V7.5H1.25V18.125ZM13.75 10.4688C13.75 10.2109 13.9609 10 14.2188 10H15.7812C16.0391 10 16.25 10.2109 16.25 10.4688V12.0312C16.25 12.2891 16.0391 12.5 15.7812 12.5H14.2188C13.9609 12.5 13.75 12.2891 13.75 12.0312V10.4688ZM13.75 15.4688C13.75 15.2109 13.9609 15 14.2188 15H15.7812C16.0391 15 16.25 15.2109 16.25 15.4688V17.0312C16.25 17.2891 16.0391 17.5 15.7812 17.5H14.2188C13.9609 17.5 13.75 17.2891 13.75 17.0312V15.4688ZM8.75 10.4688C8.75 10.2109 8.96094 10 9.21875 10H10.7812C11.0391 10 11.25 10.2109 11.25 10.4688V12.0312C11.25 12.2891 11.0391 12.5 10.7812 12.5H9.21875C8.96094 12.5 8.75 12.2891 8.75 12.0312V10.4688ZM8.75 15.4688C8.75 15.2109 8.96094 15 9.21875 15H10.7812C11.0391 15 11.25 15.2109 11.25 15.4688V17.0312C11.25 17.2891 11.0391 17.5 10.7812 17.5H9.21875C8.96094 17.5 8.75 17.2891 8.75 17.0312V15.4688ZM3.75 10.4688C3.75 10.2109 3.96094 10 4.21875 10H5.78125C6.03906 10 6.25 10.2109 6.25 10.4688V12.0312C6.25 12.2891 6.03906 12.5 5.78125 12.5H4.21875C3.96094 12.5 3.75 12.2891 3.75 12.0312V10.4688ZM3.75 15.4688C3.75 15.2109 3.96094 15 4.21875 15H5.78125C6.03906 15 6.25 15.2109 6.25 15.4688V17.0312C6.25 17.2891 6.03906 17.5 5.78125 17.5H4.21875C3.96094 17.5 3.75 17.2891 3.75 17.0312V15.4688ZM16.875 2.5H15V0.625C15 0.28125 14.7188 0 14.375 0H13.125C12.7812 0 12.5 0.28125 12.5 0.625V2.5H7.5V0.625C7.5 0.28125 7.21875 0 6.875 0H5.625C5.28125 0 5 0.28125 5 0.625V2.5H3.125C2.08984 2.5 1.25 3.33985 1.25 4.375V6.25H18.75V4.375C18.75 3.33985 17.9101 2.5 16.875 2.5Z"
-                                          fill="#9CA3AF"
-                                        />
-                                      </g>
-                                    </svg>
+        <div class="et_summary_card et_clinic_card">
 
-                                    July 1, 2025 - Oct 1, 2025
-                                  </p>
-                                </li>
-                              </ul>
-                              <ul class="ct_mt_30">
-                                <li
-                                  class="d-flex justify-content-between align-items-center"
-                                >
-                                  <p class="mb-0">Consultation Fee</p>
-                                  <p class="mb-0">€80.00</p>
-                                </li>
-                                <li
-                                  class="d-flex justify-content-between align-items-center mt-2"
-                                >
-                                  <p class="mb-0">Taxes & Charges</p>
-                                  <p class="mb-0">€5.00</p>
-                                </li>
-                              </ul>
-                              <hr class="ct_hr_border_clr" />
-                              <div
-                                class="d-flex align-items-center gap-2 justify-content-between mt-2"
-                              >
-                                <div>
-                                  <h5
-                                    class="mb-0 ct_fs_18 ct_fw_600 ct_orange_text"
-                                  >
-                                    Total Payable Amount
-                                  </h5>
-                                </div>
-                                <h5
-                                  class="mb-0 ct_fs_18 ct_fw_600 ct_orange_text"
-                                >
-                                  $85.00
-                                </h5>
-                              </div>
-                            </figcaption>
-                          </figure>
-                        </div>
-                      </div>
+          <h3 class="et_summary_title">
+            Appointment Summary
+          </h3>
+
+
+          <!-- Clinic -->
+          <div class="row">
+
+         <div class="col-md-5 col-sm-6 mb-sm-0 mb-3">
+         <div class="et_summary_clinic">
+              <img
+              src="assets/img/review-clinic-detail-1.png"
+              alt="Apollo Hospitals"
+            >
+         </div>
+         </div>
+
+         <div class="col-md-7 col-sm-6">
+           <div class="et_summary_clinic">
+
+             <h5>
+               Apollo Hospitals, Chennai
+             </h5>
+
+             <p>
+               Orthopedic Consultation
+             </p>
+
+             <div class="d-flex gap-2 align-items-center">
+              <img src="assets/img/review-clinic-detail-doc.png" class="ct_img_20">
+               <span>Dr. James Wilson</span>
+             </div>
+
+           </div>
+
+         </div>
+
+          </div>
+
+
+          <hr class="ct_text_4B5563">
+          <!-- Details -->
+
+          <div class="et_summary_details">
+
+            <div class="et_summary_row">
+
+              <span>
+              <svg class="me-2" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.38793 12.1142C6.73013 12.1142 7.05831 11.9783 7.30029 11.7363C7.54226 11.4943 7.6782 11.1662 7.6782 10.824C7.6782 10.4818 7.54226 10.1536 7.30029 9.9116C7.05831 9.66963 6.73013 9.53369 6.38793 9.53369C6.04573 9.53369 5.71754 9.66963 5.47557 9.9116C5.2336 10.1536 5.09766 10.4818 5.09766 10.824C5.09766 11.1662 5.2336 11.4943 5.47557 11.7363C5.71754 11.9783 6.04573 12.1142 6.38793 12.1142ZM6.38793 15.727C6.73013 15.727 7.05831 15.591 7.30029 15.3491C7.54226 15.1071 7.6782 14.7789 7.6782 14.4367C7.6782 14.0945 7.54226 13.7663 7.30029 13.5244C7.05831 13.2824 6.73013 13.1464 6.38793 13.1464C6.04573 13.1464 5.71754 13.2824 5.47557 13.5244C5.2336 13.7663 5.09766 14.0945 5.09766 14.4367C5.09766 14.7789 5.2336 15.1071 5.47557 15.3491C5.71754 15.591 6.04573 15.727 6.38793 15.727ZM11.291 10.824C11.291 11.1662 11.155 11.4943 10.913 11.7363C10.6711 11.9783 10.3429 12.1142 10.0007 12.1142C9.65848 12.1142 9.3303 11.9783 9.08832 11.7363C8.84635 11.4943 8.71041 11.1662 8.71041 10.824C8.71041 10.4818 8.84635 10.1536 9.08832 9.9116C9.3303 9.66963 9.65848 9.53369 10.0007 9.53369C10.3429 9.53369 10.6711 9.66963 10.913 9.9116C11.155 10.1536 11.291 10.4818 11.291 10.824ZM10.0007 15.727C10.3429 15.727 10.6711 15.591 10.913 15.3491C11.155 15.1071 11.291 14.7789 11.291 14.4367C11.291 14.0945 11.155 13.7663 10.913 13.5244C10.6711 13.2824 10.3429 13.1464 10.0007 13.1464C9.65848 13.1464 9.3303 13.2824 9.08832 13.5244C8.84635 13.7663 8.71041 14.0945 8.71041 14.4367C8.71041 14.7789 8.84635 15.1071 9.08832 15.3491C9.3303 15.591 9.65848 15.727 10.0007 15.727ZM14.9037 10.824C14.9037 11.1662 14.7678 11.4943 14.5258 11.7363C14.2838 11.9783 13.9556 12.1142 13.6134 12.1142C13.2712 12.1142 12.9431 11.9783 12.7011 11.7363C12.4591 11.4943 12.3232 11.1662 12.3232 10.824C12.3232 10.4818 12.4591 10.1536 12.7011 9.9116C12.9431 9.66963 13.2712 9.53369 13.6134 9.53369C13.9556 9.53369 14.2838 9.66963 14.5258 9.9116C14.7678 10.1536 14.9037 10.4818 14.9037 10.824Z" fill="#0A8489"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M5.87179 1.01782C6.07711 1.01782 6.27402 1.09939 6.4192 1.24457C6.56439 1.38975 6.64595 1.58666 6.64595 1.79198V2.56615H13.3554V1.79198C13.3554 1.58666 13.4369 1.38975 13.5821 1.24457C13.7273 1.09939 13.9242 1.01782 14.1295 1.01782C14.3348 1.01782 14.5317 1.09939 14.6769 1.24457C14.8221 1.38975 14.9037 1.58666 14.9037 1.79198V2.5744C15.0606 2.57853 15.2068 2.5861 15.3424 2.59711C15.7346 2.62808 16.1021 2.69827 16.4499 2.87581C16.9842 3.14798 17.4185 3.58231 17.6907 4.11653C17.8682 4.46439 17.9384 4.83186 17.9694 5.2241C18.0003 5.60086 18.0003 6.0602 18.0003 6.61243V14.5192C18.0003 15.0714 18.0003 15.5308 17.9694 15.9075C17.9384 16.2998 17.8682 16.6672 17.6907 17.0151C17.4188 17.5492 16.9848 17.9835 16.451 18.2558C16.1021 18.4334 15.7346 18.5036 15.3424 18.5345C14.9656 18.5655 14.5063 18.5655 13.9551 18.5655H6.04726C5.49503 18.5655 5.03569 18.5655 4.65893 18.5345C4.26669 18.5036 3.89922 18.4334 3.55136 18.2558C3.01745 17.9842 2.58316 17.5506 2.31064 17.0172C2.1331 16.6683 2.06291 16.3008 2.03194 15.9086C2.00098 15.5318 2.00098 15.0725 2.00098 14.5213V6.61243C2.00098 6.0602 2.00098 5.60086 2.03194 5.2241C2.06291 4.83186 2.1331 4.46439 2.31064 4.11653C2.58281 3.58231 3.01714 3.14798 3.55136 2.87581C3.89922 2.69827 4.26669 2.62808 4.65893 2.59711C4.7945 2.5861 4.94073 2.57853 5.09762 2.5744V1.79198C5.09762 1.69032 5.11765 1.58965 5.15655 1.49573C5.19546 1.4018 5.25248 1.31646 5.32437 1.24457C5.39626 1.17268 5.4816 1.11566 5.57553 1.07675C5.66945 1.03785 5.77012 1.01782 5.87179 1.01782ZM5.09762 4.37252V4.12273C4.99324 4.12594 4.88895 4.13179 4.78486 4.14028C4.48862 4.16402 4.3472 4.20737 4.2543 4.25485C4.01113 4.37862 3.81345 4.5763 3.68968 4.81947C3.6422 4.91237 3.59885 5.05379 3.57511 5.35003C3.55033 5.65557 3.5493 6.05194 3.5493 6.6434V7.21112H16.452V6.6434C16.452 6.05297 16.452 5.65557 16.4262 5.35003C16.4025 5.05379 16.3591 4.91237 16.3116 4.81947C16.1878 4.5763 15.9902 4.37862 15.747 4.25485C15.6541 4.20737 15.5127 4.16402 15.2154 4.14028C15.1117 4.13181 15.0077 4.12596 14.9037 4.12273V4.37252C14.9037 4.57785 14.8221 4.77476 14.6769 4.91994C14.5317 5.06512 14.3348 5.14669 14.1295 5.14669C13.9242 5.14669 13.7273 5.06512 13.5821 4.91994C13.4369 4.77476 13.3554 4.57785 13.3554 4.37252V4.11447H6.64595V4.37252C6.64595 4.57785 6.56439 4.77476 6.4192 4.91994C6.27402 5.06512 6.07711 5.14669 5.87179 5.14669C5.66647 5.14669 5.46956 5.06512 5.32437 4.91994C5.17919 4.77476 5.09762 4.57785 5.09762 4.37252ZM16.452 8.24333H3.5493V14.4882C3.5493 15.0787 3.5493 15.4761 3.57511 15.7806C3.59885 16.0779 3.6422 16.2193 3.68968 16.3122C3.81355 16.5558 4.0107 16.7529 4.2543 16.8768C4.3472 16.9243 4.48862 16.9676 4.78486 16.9914C5.0904 17.0161 5.48677 17.0172 6.07823 17.0172H13.9231C14.5135 17.0172 14.9109 17.0172 15.2154 16.9914C15.5127 16.9676 15.6541 16.9243 15.747 16.8768C15.9902 16.753 16.1878 16.5553 16.3116 16.3122C16.3591 16.2193 16.4025 16.0779 16.4262 15.7806C16.451 15.4761 16.452 15.0787 16.452 14.4882V8.24333Z" fill="#0A8489"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M7.67773 5.66283C7.67773 5.45751 7.7593 5.2606 7.90448 5.11542C8.04967 4.97024 8.24658 4.88867 8.4519 4.88867H11.5485C11.7539 4.88867 11.9508 4.97024 12.096 5.11542C12.2411 5.2606 12.3227 5.45751 12.3227 5.66283C12.3227 5.86815 12.2411 6.06507 12.096 6.21025C11.9508 6.35543 11.7539 6.437 11.5485 6.437H8.4519C8.24658 6.437 8.04967 6.35543 7.90448 6.21025C7.7593 6.06507 7.67773 5.86815 7.67773 5.66283Z" fill="#0A8489"/>
+</svg>
+
+                Date
+              </span>
+
+              <strong>
+                24 July 2025
+              </strong>
+
+            </div>
+
+
+            <div class="et_summary_row">
+
+              <span class="">
+              <svg class="me-2" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M10.0003 1.66663C14.6028 1.66663 18.3337 5.39746 18.3337 9.99996C18.3337 14.6025 14.6028 18.3333 10.0003 18.3333C5.39783 18.3333 1.66699 14.6025 1.66699 9.99996C1.66699 5.39746 5.39783 1.66663 10.0003 1.66663ZM10.0003 3.33329C8.23222 3.33329 6.53652 4.03567 5.28628 5.28591C4.03604 6.53616 3.33366 8.23185 3.33366 9.99996C3.33366 11.7681 4.03604 13.4638 5.28628 14.714C6.53652 15.9642 8.23222 16.6666 10.0003 16.6666C11.7684 16.6666 13.4641 15.9642 14.7144 14.714C15.9646 13.4638 16.667 11.7681 16.667 9.99996C16.667 8.23185 15.9646 6.53616 14.7144 5.28591C13.4641 4.03567 11.7684 3.33329 10.0003 3.33329ZM10.0003 4.99996C10.2044 4.99999 10.4014 5.07492 10.554 5.21056C10.7065 5.34619 10.8039 5.53308 10.8278 5.73579L10.8337 5.83329V9.65496L13.0895 11.9108C13.2389 12.0608 13.3257 12.262 13.3322 12.4736C13.3386 12.6852 13.2643 12.8914 13.1243 13.0502C12.9843 13.209 12.789 13.3085 12.5783 13.3286C12.3675 13.3487 12.157 13.2878 11.9895 13.1583L11.9112 13.0891L9.41116 10.5891C9.28164 10.4595 9.19846 10.2908 9.17449 10.1091L9.16699 9.99996V5.83329C9.16699 5.61228 9.25479 5.40032 9.41107 5.24404C9.56735 5.08776 9.77931 4.99996 10.0003 4.99996Z" fill="#0A8489"/>
+</svg>
+
+                Time
+              </span>
+
+              <strong>
+                10:30 AM
+              </strong>
+
+            </div>
+
+
+            <div class="et_summary_row">
+
+              <span><svg class="me-2" width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M7.49935 4.16667H5.83268C4.91221 4.16667 4.16602 4.91286 4.16602 5.83333V15.8333C4.16602 16.7538 4.91221 17.5 5.83268 17.5H14.166C15.0865 17.5 15.8327 16.7538 15.8327 15.8333V5.83333C15.8327 4.91286 15.0865 4.16667 14.166 4.16667H12.4993M7.49935 4.16667C7.49935 5.08714 8.24554 5.83333 9.16602 5.83333H10.8327C11.7532 5.83333 12.4993 5.08714 12.4993 4.16667M7.49935 4.16667C7.49935 3.24619 8.24554 2.5 9.16602 2.5H10.8327C11.7532 2.5 12.4993 3.24619 12.4993 4.16667" stroke="#0A8489" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+  <i class="bi bi-clipboard"></i>
+                Treatment
+              </span>
+
+              <strong>
+                Total Knee Replacement
+              </strong>
+
+            </div>
+
+
+            <div class="et_summary_row">
+
+              <span>
+                <svg class="me-2" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M11.7717 11.1047L8.94299 13.9334C8.69316 14.1835 8.35416 14.324 8.00066 14.324C7.64716 14.324 7.30816 14.1835 7.05833 13.9334L4.22899 11.1047C2.14627 9.02189 2.14633 5.64506 4.22912 3.56231C6.31191 1.47956 9.68874 1.47956 11.7715 3.56231C13.8543 5.64506 13.8544 9.02189 11.7717 11.1047V11.1047" stroke="#0A8489" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M10 7.33337C10 8.4372 9.10383 9.33337 8 9.33337C6.89617 9.33337 6 8.4372 6 7.33337C6 6.22954 6.89617 5.33337 8 5.33337C9.10383 5.33337 10 6.22954 10 7.33337V7.33337" stroke="#0A8489" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                Location
+              </span>
+
+              <strong>
+                Greams Road, Chennai
+              </strong>
+
+            </div>
+
+          </div>
+
+
+          <!-- Payment -->
+
+          <h4 class="et_payment_title">
+            Payment Summary
+          </h4>
+
+
+          <div class="et_price_row">
+
+            <span>Treatment Fee</span>
+
+            <strong>$150.00</strong>
+
+          </div>
+
+
+          <div class="et_price_row">
+
+            <span>Consultation Fee</span>
+
+            <strong>$150.00</strong>
+
+          </div>
+
+
+          <div class="et_price_row">
+
+            <span>Taxes & Charges</span>
+
+            <strong>$85.00</strong>
+
+          </div>
+
+
+            <hr class="ct_text_4B5563">
+          <!-- Total -->
+
+          <div class="et_total_row">
+
+            <span>
+              Total Payable Amount
+            </span>
+
+            <strong>
+              $385.00
+            </strong>
+
+          </div>
+
+
+            <div class="d-flex gap-2 mt-4 justify-content-end">
+                <button
+                    type="button"
+                    class="ct_outline_btn previous  me-3"
+                  >
+                    Back
+                  </button>
+
+           <button
+                    type="button"
+                    class="ct_orange_btn ct_form_next ct_multistep_form_next "
+                      data-bs-toggle="modal"
+                    data-bs-target="#become_host_form_success"
+                  >
+                    Pay $85.00 
+                  </button>
+            </div>
+              
+        </div>
+
+      </div>
                     </div>
                   </div>
                   <!-- <input type="button" name="previous" class="previous" value="Previous" />
                                 <input type="button" name="next" class="ct_form_next" value="Next" /> -->
                   <br />
                   <br />
-                  <button
-                    type="button"
-                    class="ct_orange_btn ct_form_next float-end"
-                  >
-                    Confirm & Pay $85
-                  </button>
-                  <button
-                    type="button"
-                    class="ct_outline_btn previous float-end me-3"
-                  >
-                    Back
-                  </button>
+                 
                 </fieldset>
-                <fieldset>
+                <!-- <fieldset>
                   <div class="ct_form-card">
                     <section class="ct_payment_success_bg py-5">
                       <div class="ct_payment_sucess_cnt">
@@ -1021,7 +1222,7 @@
                       </div>
                     </section>
                   </div>
-                </fieldset>
+                </fieldset> -->
               </form>
             </div>
           </div>
@@ -1178,6 +1379,76 @@
 
   </div>
 </footer>
+
+<!-- submit form modal -->
+ <div
+            class="modal fade modal-lg"
+            id="become_host_form_success"
+            tabindex="-1"
+            aria-labelledby="become_host_form_successLabel"
+            aria-hidden="true"
+        >
+            <div class="modal-dialog modal-dialog-centered" style="max-width: 450px;">
+                <div class="modal-content">
+                    <div class="modal-header py-0 border-0">
+                        <!-- <button
+                            type="button"
+                            class="btn-close ct_login_btn_close"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                        ></button> -->
+                    </div>
+                    <div class="modal-body py-5 mx-auto" style="max-width: 450px;">
+                        <div class="text-center ct_payment_success_bg">
+
+                   <div class="mb-4">
+<svg width="104" height="104" viewBox="0 0 104 104" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="12" y="2" width="80" height="80" rx="40" fill="#0A8489"/>
+<g filter="url(#filter0_dd_523_8377)">
+<rect x="12" y="2" width="80" height="80" rx="40" fill="white" fill-opacity="0.01" shape-rendering="crispEdges"/>
+</g>
+<path d="M40.334 43.6666L47.0007 50.3333L63.6673 33.6666" stroke="white" stroke-width="6.66667" stroke-linecap="round" stroke-linejoin="round"/>
+<defs>
+<filter id="filter0_dd_523_8377" x="0" y="0" width="104" height="104" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="4" operator="erode" in="SourceAlpha" result="effect1_dropShadow_523_8377"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="3"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.772549 0 0 0 0 0.368627 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_523_8377"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feMorphology radius="3" operator="erode" in="SourceAlpha" result="effect2_dropShadow_523_8377"/>
+<feOffset dy="10"/>
+<feGaussianBlur stdDeviation="7.5"/>
+<feComposite in2="hardAlpha" operator="out"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.133333 0 0 0 0 0.772549 0 0 0 0 0.368627 0 0 0 0.2 0"/>
+<feBlend mode="normal" in2="effect1_dropShadow_523_8377" result="effect2_dropShadow_523_8377"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_523_8377" result="shape"/>
+</filter>
+</defs>
+</svg>
+
+                   </div>
+
+                           
+                            <h4 class="ct_fs_30 ct_fw_600 ct_primary_text mb-3">Payment succeeded!</h4>
+                            <p class="ct_fs_14">Thank you for your payment. We've reserved your apartment and sent all the details to your email.</p>
+                            <div class="mt-5 pb-4">
+                                <a href="#" class="ct_primary_btn mx-sm-5">
+                                    Go to
+                                Dashboard
+                                </a>
+                            </div>
+                         
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- submit form modal end -->
+
 
     <!-- Login patient Modal S -->
     <div
