@@ -200,101 +200,131 @@ $(document).ready(function () {
 
 
 $(document).ready(function () {
+  var current = 1;
+  var steps = $("#msform2 fieldset").length;
 
-    var current = 1;
-    var steps = $("#msform2 fieldset").length;
+  // Hide all fieldsets except first
+  $("#msform2 fieldset:not(:first)").hide();
 
-    // Hide all fieldsets except first
-    $("#msform2 fieldset:not(:first)").hide();
+  setProgressBar(current);
 
-    setProgressBar(current);
+  // NEXT BUTTON
+  $(".ct_multistep_form_next").click(function () {
+    var current_fs = $(this).closest("fieldset");
+    var next_fs = current_fs.next("fieldset");
 
-
-    // NEXT BUTTON
-    $(".ct_multistep_form_next").click(function () {
-
-        var current_fs = $(this).closest("fieldset");
-        var next_fs = current_fs.next("fieldset");
-
-        if (!next_fs.length) {
-            return;
-        }
-
-        // Progress
-        $("#ct_form_progressbar2 li")
-            .eq($("#msform2 fieldset").index(next_fs))
-            .addClass("active");
-
-        // Hide current
-        current_fs.fadeOut(300, function () {
-
-            // Show next
-            next_fs.fadeIn(300);
-
-        });
-
-        current++;
-
-        setProgressBar(current);
-    });
-
-
-    // PREVIOUS BUTTON
-    $(".previous").click(function () {
-
-        var current_fs = $(this).closest("fieldset");
-        var previous_fs = current_fs.prev("fieldset");
-
-        if (!previous_fs.length) {
-            return;
-        }
-
-        // Remove active progress
-        $("#ct_form_progressbar2 li")
-            .eq($("#msform2 fieldset").index(current_fs))
-            .removeClass("active");
-
-        // Hide current
-        current_fs.fadeOut(300, function () {
-
-            // Show previous
-            previous_fs.fadeIn(300);
-
-        });
-
-        current--;
-
-        setProgressBar(current);
-    });
-
-
-    // PROGRESS BAR
-    function setProgressBar(curStep) {
-
-        var percent = (100 / steps) * curStep;
-
-        $(".progress-bar").css(
-            "width",
-            percent + "%"
-        );
+    if (!next_fs.length) {
+      return;
     }
 
+    // Progress
+    $("#ct_form_progressbar2 li")
+      .eq($("#msform2 fieldset").index(next_fs))
+      .addClass("active");
 
-    $(".submit").click(function () {
-        return false;
+    // Hide current
+    current_fs.fadeOut(300, function () {
+      // Show next
+      next_fs.fadeIn(300);
     });
 
+    current++;
 
-    $(".ct_apply_filter_btn").click(function () {
-        $(".ct_mobile_filter_category_content").addClass("active");
+    setProgressBar(current);
+  });
+
+  // PREVIOUS BUTTON
+  $(".previous").click(function () {
+    var current_fs = $(this).closest("fieldset");
+    var previous_fs = current_fs.prev("fieldset");
+
+    if (!previous_fs.length) {
+      return;
+    }
+
+    // Remove active progress
+    $("#ct_form_progressbar2 li")
+      .eq($("#msform2 fieldset").index(current_fs))
+      .removeClass("active");
+
+    // Hide current
+    current_fs.fadeOut(300, function () {
+      // Show previous
+      previous_fs.fadeIn(300);
     });
 
-    $(".ct_category_close_btn").click(function () {
-        $(".ct_mobile_filter_category_content").removeClass("active");
-    });
+    current--;
+
+    setProgressBar(current);
+  });
+
+  // PROGRESS BAR
+  function setProgressBar(curStep) {
+    var percent = (100 / steps) * curStep;
+
+    $(".progress-bar").css("width", percent + "%");
+  }
+
+  $(".submit").click(function () {
+    return false;
+  });
+
+  $(".ct_apply_filter_btn").click(function () {
+    $(".ct_mobile_filter_category_content").addClass("active");
+  });
+
+  $(".ct_category_close_btn").click(function () {
+    $(".ct_mobile_filter_category_content").removeClass("active");
+  });
+});
+
+$(document).ready(function () {
+  var clinicSlider = $(".ct_related_clinic_slider");
+
+  clinicSlider.owlCarousel({
+    loop: true,
+    margin: 20,
+    nav: false,
+    dots: false,
+    autoplay: false,
+    smartSpeed: 600,
+
+    responsive: {
+      0: {
+        items: 1,
+      },
+
+      576: {
+        items: 2,
+      },
+
+      992: {
+        items: 3,
+      },
+    },
+  });
+
+  $(".ct_clinic_prev").click(function () {
+    clinicSlider.trigger("prev.owl.carousel");
+  });
+
+  $(".ct_clinic_next").click(function () {
+    clinicSlider.trigger("next.owl.carousel");
+  });
+
+  // Range slider teal fill
+  function updateRangeFill(slider) {
+    var min = parseFloat(slider.min) || 0;
+    var max = parseFloat(slider.max) || 100;
+    var val = parseFloat(slider.value);
+    var pct = ((val - min) / (max - min)) * 100;
+    slider.style.setProperty('--range-fill', pct + '%');
+  }
+
+  $('input[type="range"].form-range').each(function () {
+    updateRangeFill(this);
+  }).on('input', function () {
+    updateRangeFill(this);
+  });
 
 });
- 
-
-
-
