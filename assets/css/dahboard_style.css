@@ -849,7 +849,7 @@ backdrop-filter: blur(8px);
   max-width: none !important;
   height: 28px;
   line-height: 28px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   font-size: 16px;
   color: #273039;
 }
@@ -1075,10 +1075,8 @@ backdrop-filter: blur(8px);
 
 
 #ct_user_dash_baord_main hr.divider {
-  border-top: 1px solid #F1F5F9;
-
+    border-top: 1px solid #a6a7a9;
 }
-
 .status-badge-green {
   display: inline-flex;
   align-items: center;

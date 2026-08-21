@@ -1,18 +1,18 @@
 @media (max-width: 991px) {
  
 
-  .ct_side_bar {
+ #ct_user_dash_baord_main  .ct_side_bar {
     left: -100%;
     padding-top: 40px;
      transition: left 0.4s ease-in-out;
   }
 
-  #ct_user_dash_baord_main .ct_show .ct_side_bar {
+  #ct_user_dash_baord_main.ct_show .ct_side_bar {
     left: 0px;
-    z-index: 99;
+    z-index: 999;
   }
 
-  .ct_close_sidebar {
+  #ct_user_dash_baord_main  .ct_close_sidebar {
     position: absolute;
     display: block;
     right: 15px;
@@ -22,11 +22,11 @@
    color: #fff;
   }
 
-  .ct_close_sidebar:hover {
+  #ct_user_dash_baord_main .ct_close_sidebar:hover {
     transform: rotate(360deg);
   }
 
-  .ct_right_panel {
+ #ct_user_dash_baord_main  .ct_right_panel {
     margin-left: 0px;
     width: 100%;
   }

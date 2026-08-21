@@ -302,7 +302,7 @@ a:hover {
 
 /* Header Css S */
 
-.ct_header {
+#page .ct_header {
   position: absolute;
   top: 22px;
   left: 0;
@@ -312,7 +312,7 @@ a:hover {
 
 }
 
-.ct_header.ct_sticky_menu {
+#page .ct_header.ct_sticky_menu {
   position: fixed;
   top: 0;
   background: #fff;
@@ -322,14 +322,14 @@ a:hover {
 }
 
 
-.ct_header.ct_sticky_menu .ct_navbr_main {
+#page .ct_header.ct_sticky_menu .ct_navbr_main {
   border-radius: 0;
   padding-inline: 0px;
 
 
 }
 
-.ct_navbr_main {
+#page .ct_navbr_main {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -346,7 +346,7 @@ a:hover {
   border-top-right-radius: 10px;
 }
 
-.ct_navbar>ul {
+#page .ct_navbar>ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -359,7 +359,7 @@ a:hover {
   justify-content: end;
 }
 
-.ct_navbar li a {
+#page .ct_navbar li a {
   white-space: nowrap;
 }
 
@@ -1250,14 +1250,14 @@ span.ct_step_circle.completed {
 }
 
 
-.search-wrapper {
+#page  .search-wrapper {
   width: 100%;
   display: flex;
   justify-content: center;
   /* padding:25px; */
 }
 
-.search-box {
+#page  .search-box {
   width: 100%;
   max-width: 800px;
   background: #fff;
@@ -1269,7 +1269,7 @@ span.ct_step_circle.completed {
 
 }
 
-.search-box input {
+#page .search-box input {
   flex: 1;
   border: none;
   outline: none;
@@ -1279,11 +1279,11 @@ span.ct_step_circle.completed {
   padding-right: 13px;
 }
 
-.search-box input::placeholder {
+#page .search-box input::placeholder {
   color: #0D0D0DE0;
 }
 
-.search-btn {
+#page .search-btn {
   width: 48px;
   height: 48px;
   border: none;
@@ -1297,16 +1297,16 @@ span.ct_step_circle.completed {
   transition: .3s;
 }
 
-.search-btn i {
+#page .search-btn i {
   font-size: 22px;
   color: #fff;
 }
 
-.search-btn:hover {
+#page .search-btn:hover {
   background: #0A8489BF;
 }
 
-.ct_search_wrapper_sec {
+#page .ct_search_wrapper_sec {
   position: relative;
   z-index: 1;
   margin-top: -25px;
@@ -1376,7 +1376,7 @@ span.ct_step_circle.completed {
   display: block;
 }
 
-.ct_input {
+#page  .ct_input {
   border: 1px solid #E5E7EB !important;
   border-radius: 10px !important;
   padding: 10px 14px !important;
@@ -1388,13 +1388,13 @@ span.ct_step_circle.completed {
   transition: border-color 0.2s;
 }
 
-.ct_input:focus {
+#page .ct_input:focus {
   border-color: #0A8489 !important;
   box-shadow: 0 0 0 2px rgba(10, 132, 137, 0.1) !important;
 }
 
 /* Price Range slider */
-.form-range {
+#page .form-range {
   -webkit-appearance: none;
   appearance: none;
   width: 100%;
@@ -1406,7 +1406,7 @@ span.ct_step_circle.completed {
   margin: 10px 0;
 }
 
-.form-range::-webkit-slider-thumb {
+#page .form-range::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
   width: 20px;
@@ -1419,7 +1419,7 @@ span.ct_step_circle.completed {
   margin-top: -8px;
 }
 
-.form-range::-moz-range-thumb {
+#page .form-range::-moz-range-thumb {
   width: 20px;
   height: 20px;
   border-radius: 50%;
@@ -1429,18 +1429,18 @@ span.ct_step_circle.completed {
   cursor: pointer;
 }
 
-.form-range::-webkit-slider-runnable-track {
+#page .form-range::-webkit-slider-runnable-track {
   height: 5px;
   border-radius: 5px;
 }
 
-.form-range::-moz-range-track {
+#page .form-range::-moz-range-track {
   height: 5px;
   border-radius: 5px;
   background: #E5E7EB;
 }
 
-.form-range::-moz-range-progress {
+#page  .form-range::-moz-range-progress {
   height: 5px;
   border-radius: 5px;
   background: #0A8489;
@@ -2063,7 +2063,6 @@ span.ct_step_circle.completed {
 }
 
 
-.ct_stats_section {}
 
 .ct_stats_box {
   background-color: var(--primary);
@@ -5824,4 +5823,38 @@ span.ct_step_circle.completed {
 .ct_clinic_card .ct_outline_btn:hover {
   background-color: #0A8489;
   color: #FFFFFF;
+}
+
+
+.ct_page_not_found_bg{
+      background-color: #E7FFFF;
+      height: 100vh;
+      display: flex;
+      align-content: center;
+      justify-content: center;
+      text-align: center;
+  }
+.ct_page_not_found_section {
+    padding: 4rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.ct_page_not_found_section .ct_page_not_found_error{
+  font-size: 150px;
+  color: var(--primary);
+  font-weight: 700;
+ 
+
+}
+
+
+.ct_page_not_found_page{
+  margin: 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: #444;
+    font-family: "Roboto", sans-serif;
+
 }

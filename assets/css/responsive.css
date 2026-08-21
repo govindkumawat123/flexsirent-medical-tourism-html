@@ -9,7 +9,7 @@
 }
 
 @media screen and (max-width: 991px) {
-  .ct_navbar>ul {
+  #page  .ct_navbar>ul {
     flex-direction: column;
     align-items: flex-start;
     position: fixed;
@@ -21,6 +21,7 @@
     padding: 60px 30px;
     z-index: 999;
     transition: 0.4s ease all;
+    justify-content: start;
   }
 .ct_insight_meta{
   flex-direction: row;
@@ -34,7 +35,7 @@
     color: #000;
   }
 
-  .ct_navbar.ct_show ul {
+  #page .ct_navbar.ct_show ul {
     right: 0px;
   }
 
